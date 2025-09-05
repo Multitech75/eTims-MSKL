@@ -1,0 +1,125 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "prompt",
+ "creation": "2025-08-19 11:19:52.197039",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "locationid",
+  "analysistype",
+  "analysisno",
+  "column_break_rlft",
+  "analysiscode",
+  "analysisfilter1",
+  "analysisname",
+  "column_break_lcql",
+  "analysisfilter2",
+  "datecreated",
+  "recordchanged",
+  "isvalid",
+  "isdeleted"
+ ],
+ "fields": [
+  {
+   "fieldname": "locationid",
+   "fieldtype": "Data",
+   "label": "Location ID"
+  },
+  {
+   "fieldname": "column_break_rlft",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lcql",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Now",
+   "fieldname": "datecreated",
+   "fieldtype": "Datetime",
+   "label": "Date Created"
+  },
+  {
+   "default": "1",
+   "fieldname": "isvalid",
+   "fieldtype": "Check",
+   "label": "Is Valid"
+  },
+  {
+   "default": "0",
+   "fieldname": "isdeleted",
+   "fieldtype": "Check",
+   "label": "Is Deleted"
+  },
+  {
+   "default": "1",
+   "fieldname": "recordchanged",
+   "fieldtype": "Check",
+   "label": "Record Changed"
+  },
+  {
+   "fieldname": "analysistype",
+   "fieldtype": "Data",
+   "label": "Analysis Type"
+  },
+  {
+   "fieldname": "analysisno",
+   "fieldtype": "Int",
+   "label": "Analysis No"
+  },
+  {
+   "fieldname": "analysiscode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Code",
+   "reqd": 1
+  },
+  {
+   "fieldname": "analysisname",
+   "fieldtype": "Small Text",
+   "label": "Analysis Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "analysisfilter1",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Filter1",
+   "reqd": 1
+  },
+  {
+   "fieldname": "analysisfilter2",
+   "fieldtype": "Data",
+   "label": "Analysis Filter2"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-27 12:05:28.508432",
+ "modified_by": "Administrator",
+ "module": "eTims Integration",
+ "name": "Item Classification",
+ "naming_rule": "Set by user",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "analysisfilter1,analysisname",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

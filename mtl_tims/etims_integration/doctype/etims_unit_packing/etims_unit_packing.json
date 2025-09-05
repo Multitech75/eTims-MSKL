@@ -1,0 +1,111 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:analysiscode",
+ "creation": "2025-08-19 13:12:19.390651",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "locationid",
+  "analysistype",
+  "analysiscode",
+  "analysisname",
+  "column_break_lfbc",
+  "analysisno",
+  "datecreated",
+  "recordchanged",
+  "isvalid",
+  "isdeleted"
+ ],
+ "fields": [
+  {
+   "fieldname": "locationid",
+   "fieldtype": "Data",
+   "label": "Location Id"
+  },
+  {
+   "default": "Now",
+   "fieldname": "datecreated",
+   "fieldtype": "Datetime",
+   "label": "dateCreated"
+  },
+  {
+   "default": "1",
+   "fieldname": "recordchanged",
+   "fieldtype": "Check",
+   "label": "Record Changed"
+  },
+  {
+   "default": "1",
+   "fieldname": "isvalid",
+   "fieldtype": "Check",
+   "label": "Is Valid"
+  },
+  {
+   "default": "0",
+   "fieldname": "isdeleted",
+   "fieldtype": "Check",
+   "label": "Is Deleted"
+  },
+  {
+   "fieldname": "column_break_lfbc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "analysistype",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "analysiscode",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "analysisname",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Analysis Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "analysisno",
+   "fieldtype": "Int",
+   "label": "Analysis No"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-08-26 18:06:36.204234",
+ "modified_by": "Administrator",
+ "module": "eTims Integration",
+ "name": "eTims Unit Packing",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "analysiscode,analysisname",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "analysisname"
+}

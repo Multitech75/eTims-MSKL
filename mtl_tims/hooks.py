@@ -4,11 +4,11 @@ app_publisher = "MTSL"
 app_description = " "
 app_email = "info@multitech.co.ke"
 app_license = "mit"
+required_apps = ["erpnext"]
 
 # Apps
 # ------------------
 
-# required_apps = []
 
 # Each item in the list will be shown as an app in the apps page
 # add_to_apps_screen = [
@@ -21,6 +21,14 @@ app_license = "mit"
 # 	}
 # ]
 
+
+# Fixtures 
+# --------
+fixtures = [
+    {"dt": "eTims Unit Packing"},
+    {"dt": "Item Classification"},
+
+]
 # Includes in <head>
 # ------------------
 
@@ -137,13 +145,42 @@ app_license = "mit"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
+doc_events = {
 # 	"*": {
 # 		"on_update": "method",
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
-# }
+    "Sales Invoice": {
+        "before_save": [
+            "mtl_tims.etims_integration.utils.before_save_"
+        ],
+        "before_submit": [
+            "mtl_tims.etims_integration.overrides.server.sales_invoice.before_submit"
+        ],
+#         # "validate": [
+#         #     "mtl_tims.mtl_tims.overrides.server.shared_overrides.validate"
+#         # ],
+#         # "before_cancel": [
+#         #     "mtl_tims.mtl_tims.overrides.server.sales_invoice.before_cancel"
+#         # ],
+#         # "before_update_after_submit": [
+#         #     "mtl_tims.mtl_tims.utils.before_save_"
+#         # ],
+        },
+    "Item": {
+        "on_update": [
+            "mtl_tims.etims_integration.overrides.server.item.on_update"
+        ],
+        # "on_trash": "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion",
+    },
+    # "Stock Ledger Entry": {
+    #     "on_update": [
+    #         "mtl_tims.etims_integration.overrides.server.stock_ledger_entry.on_update"
+    #     ],
+    # },
+    
+}
 
 # Scheduled Tasks
 # ---------------
