@@ -38,6 +38,7 @@ def perform_item_registration(item_name: str) -> dict | None:
     #     generate_and_set_etims_code(item)
       # Build the payload
     payload = build_etims_payload(item)
+    etims_log("Debug", "ETIMS Payload", payload)
 
     # Send request (synchronously or enqueue async)
     # response = send_to_etims(payload)
@@ -60,28 +61,28 @@ def build_etims_payload(item) -> dict:
     """Prepare payload for API call"""
     return [
         {
-                "itemCode": item.item_code,
-                "itemClassifiCode": item.custom_item_classification,  
-                "itemTypeCode": "2",  # maybe map from your doc
-                "itemName": item.item_name,
-                "itemStrdName": item.item_name,
-                "countryCode": item.custom_etims_country_of_origin or "KE",
-                "pkgUnitCode": item.custom_packaging_unit,
-                "qtyUnitCode": item.custom_unit_of_quantity,
-                "taxTypeCode":  "B", 
-                "batchNo": "",
-                "barcode": "",
-                "unitPrice": float(item.standard_rate or 0),
-                "group1UnitPrice": 0,
-                "group2UnitPrice": 0,
-                "group3UnitPrice": 0,
-                "group4UnitPrice": 0,
-                "group5UnitPrice": 0,
-                "additionalInfo": "",
-                "saftyQuantity": 0,
-                "isInrcApplicable": 1,
-                "isUsed": 1,
-                "quantity": 0,
+            "itemCode": item.item_code,
+            "itemClassifiCode": item.custom_item_classification,  
+            "itemTypeCode": "2",  # maybe map from your doc
+            "itemName": item.item_name,
+            "itemStrdName": item.item_name,
+            "countryCode": item.custom_etims_country_of_origin or "KE",
+            "pkgUnitCode": item.custom_packaging_unit,
+            "qtyUnitCode": item.custom_unit_of_quantity,
+            "taxTypeCode": item.custom_eTims_tax_code, 
+            "batchNo": "",
+            "barcode": "",
+            "unitPrice": float(item.standard_rate or 0),
+            "group1UnitPrice": 0,
+            "group2UnitPrice": 0,
+            "group3UnitPrice": 0,
+            "group4UnitPrice": 0,
+            "group5UnitPrice": 0,
+            "additionalInfo": "",
+            "saftyQuantity": 0,
+            "isInrcApplicable": 1,
+            "isUsed": 1,
+            "quantity": 0,
         }
     ]
 

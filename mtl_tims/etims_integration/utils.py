@@ -585,7 +585,7 @@ def build_invoice_payload(
         etims_log("Debug", "build_invoice_payload tax_code item", tax_code,item)
         payload["saleItemList"].append({
             "itemCode": item.item_code,
-            "taxTypeCode": tax_code,
+            "taxTypeCode": item.custom_eTims_tax_code, #tax_code,
             "unitPrice": round(base_net_rate + (tax_amount / qty if qty else 0), 4),
             "pkgQuantity": qty,
             "quantity": qty,
@@ -640,8 +640,6 @@ def build_creditnote_payload(
         tax_amount = item.get("custom_tax_amount", 0) or 0
         qty = abs(item.get("qty"))
         base_net_rate = round(item.get("base_net_rate") or 0, 4)
-        tax_code = item.get("taxation_type_code", "A") or "A"
-        etims_log("Debug", "build_creditnote_payload tax_code item", tax_code,item)
         payload["creditNoteItemsList"].append({
             "itemCode": item.item_code,
             "unitPrice": round(base_net_rate + (tax_amount / qty if qty else 0), 4),

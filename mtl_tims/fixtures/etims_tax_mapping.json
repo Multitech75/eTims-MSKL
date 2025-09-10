@@ -1,0 +1,35 @@
+[
+ {
+  "amended_from": null,
+  "cu_name": "ETIMS_YOURAPP",
+  "description": "Exempt",
+  "docstatus": 1,
+  "doctype": "eTims Tax Mapping",
+  "modified": "2025-09-09 18:28:08.427540",
+  "name": "A",
+  "tax_code": "A",
+  "tax_rate": 0
+ },
+ {
+  "amended_from": null,
+  "cu_name": "ETIMS_YOURAPP",
+  "description": "Vatable 16 Percent",
+  "docstatus": 1,
+  "doctype": "eTims Tax Mapping",
+  "modified": "2025-09-09 18:29:20.672791",
+  "name": "B",
+  "tax_code": "B",
+  "tax_rate": 16
+ },
+ {
+  "amended_from": null,
+  "cu_name": "ETIMS_YOURAPP",
+  "description": "Vatable 0 Percent",
+  "docstatus": 1,
+  "doctype": "eTims Tax Mapping",
+  "modified": "2025-09-09 18:29:36.503859",
+  "name": "C",
+  "tax_code": "C",
+  "tax_rate": 0
+ }
+]

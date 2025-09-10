@@ -5,10 +5,13 @@ from erpnext.controllers.taxes_and_totals import get_itemised_tax_breakup_data
 
 from ...apis.api_builder import EndpointsBuilder
 from ...apis.process_request import process_request
+from ...apis.apis import send_invoice_to_etims
 from ...apis.remote_response_status_handlers import (
     purchase_invoice_submission_on_success,
 )
 from ...utils import get_taxation_types, get_settings
+from frappe.utils import now_datetime
+from ...logger import etims_log
 
 endpoints_builder = EndpointsBuilder()
 
@@ -34,36 +37,95 @@ def validate(doc: Document, method: str = None) -> None:
         )
 
 
-def on_submit(doc: Document, method: str = None) -> None:
+def before_submit(doc: Document, method: str = None) -> None:
+    if (
+        doc.custom_submitted_successfully != 1
+        and doc.custom_prevent_etims_registration != 1
+    ):
     submit_purchase_invoice(doc)
 
 
 def submit_purchase_invoice(doc: Document) -> None:
-    if doc.is_return == 0:
-        # TODO: Handle cases when item tax templates have not been picked
+    for item in doc.items:
+        item_doc = frappe.get_doc("Item", item.item_code)
+        etims_log("Debug", "_set_taxation_type_codes item_doc", item_doc.name)
 
-        company_name = (
-            doc.company
-            or frappe.defaults.get_user_default("Company")
-            or frappe.get_value("Company", {}, "name")
-        )
+        # Ensure item is eTims registered
+        if not item_doc.custom_item_code_etims:
+            frappe.throw(
+                f"Item {item.item_name} is not registered in eTims. Purchase Invoice cannot be submitted."
+            )
 
-        settings_doc = get_settings(company_name=company_name)
+    if not doc.is_return:
+        payload = build_purchase_invoice_payload(doc)
+        api_url = "http://41.139.135.45:8089/api/AddPurchaseV2"
+        response = send_invoice_to_etims(payload, api_url)
 
-        company_name = (
-            doc.company
-            or frappe.defaults.get_user_default("Company")
-            or frappe.get_value("Company", {}, "name")
-        )
-        payload = build_purchase_invoice_payload(doc, company_name)
-        process_request(
-            payload,
-            "TrnsPurchaseSaveReq",
-            purchase_invoice_submission_on_success,
-            request_method="POST",
-            doctype="Purchase Invoice",
-            settings_name=settings_doc.name,
-        )
+        etims_log("Debug", "generic_invoices_on_submit_override response", response)
+
+        if not response.get("status"):
+            frappe.throw(
+                msg=f"Failed to validate purchase invoice {doc.name} in eTims.<br>{response.get('message')}",
+                title="eTims Error"
+            )
+        else:
+            doc.custom_submitted_successfully = 1
+            doc.custom_purchase_invoice_eTims_message = response.get("message")
+            doc.custom_eTims_response = frappe.as_json(response)
+
+
+def build_purchase_invoice_payload(doc: Document) -> dict:
+    dt = now_datetime()
+    date_only = dt.strftime("%Y%m%d")
+    date_time = f"{date_only}120000"
+
+    payload = {
+        "supplierTin": doc.tax_id or "",
+        "supplierBhfId": "",
+        "supplierName": doc.supplier_name,
+        "supplierInvcNo": "",
+        "purchTypeCode": "N",
+        "purchStatusCode": "02",
+        "pmtTypeCode": "02",
+        "purchDate": date_only,
+        "occurredDate": date_only,
+        "confirmDate": date_time,
+        "warehouseDate": date_time,
+        "remark": "MSKL",
+        "mapping": doc.name,
+        "itemsDataList": []
+    }
+
+    for item in doc.items:
+        item_doc = frappe.get_doc("Item", item.item_code)
+        tax_code = item_doc.custom_eTims_tax_code or ""
+        if not tax_code:
+            frappe.throw(
+                msg=f"Item {item.item_name} does not have a valid eTims Tax Code. Please update the item before submitting the invoice.",
+                title="eTims Error"
+            )
+
+        etims_log("Debug", "build_invoice_payload tax_code", tax_code)
+        qty = abs(item.get("qty"))
+
+        payload["itemsDataList"].append({
+            "itemCode": item.item_code,
+            "supplrItemClsCode": "",
+            "supplrItemCode": "",
+            "supplrItemName": "",
+            "quantity": qty,
+            "unitPrice": round(item.get("rate") or 0, 4),
+            "taxTypeCode": tax_code,
+            "pkgQuantity": qty,
+            "discountRate": 0,
+            "discountAmt": 0,
+            "itemExprDate": ""
+        })
+
+    etims_log("Debug", "build_invoice_payload payload", frappe.as_json(payload))
+    return payload
+
+
 
 
 @frappe.whitelist()
@@ -71,22 +133,3 @@ def send_purchase_details(name: str) -> None:
     doc = frappe.get_doc("Purchase Invoice", name)
     submit_purchase_invoice(doc)
 
-
-def build_purchase_invoice_payload(doc: Document, company_name: str) -> dict:
-    taxation_type = get_taxation_types(doc)
-    payload = {
-        "document_name": doc.name,
-        "company_name": company_name,
-        "can_send_to_etims": True,
-        "paid_invoice_amount": round(doc.grand_total - doc.outstanding_amount, 2),
-        "total_amount": round(doc.grand_total, 2),
-        "taxable_rate_A": taxation_type.get("A", {}).get("tax_rate", 0),
-        "taxable_rate_B": taxation_type.get("B", {}).get("tax_rate", 0),
-        "taxable_rate_C": taxation_type.get("C", {}).get("tax_rate", 0),
-        "taxable_rate_D": taxation_type.get("D", {}).get("tax_rate", 0),
-        "total_taxable_amount": round(doc.base_total, 2),
-        "total_tax_amount": round(doc.total_taxes_and_charges, 2),
-        "supplier_name": doc.supplier_name,
-    }
-
-    return payload

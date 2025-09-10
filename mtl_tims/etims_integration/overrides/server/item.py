@@ -21,13 +21,16 @@ def on_update(doc: Document, method: str = None) -> None:
     #     or frappe.get_value("Company", {}, "name")
     # )
 
-    # etims_log("Debug", "on_update company_name", doc)
-    # etims_log("Debug", "on_update doc name", doc.name)
+    # etims_log("Debug", "on_update company_name", doc.custom_item_code_etims)
+    # etims_log("Debug", "on_update doc name", doc.custom_item_registered)
     # etims_log("Debug", "on_update doc custom_item_eTims_message", doc.custom_item_eTims_message)
-    if doc.custom_item_code_etims and doc.custom_item_registered == 1 and doc.custom_prevent_etims_registration == 1 and doc.disabled:
-        return
-
-    perform_item_registration(doc.name)
+    if (
+        not doc.custom_item_code_etims
+        and doc.custom_item_registered != 1
+        and doc.custom_prevent_etims_registration != 1
+        and not doc.disabled
+    ):
+        perform_item_registration(doc.name)
 
 
 

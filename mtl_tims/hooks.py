@@ -26,7 +26,9 @@ required_apps = ["erpnext"]
 # --------
 fixtures = [
     {"dt": "eTims Unit Packing"},
-    {"dt": "Item Classification"},
+    {"dt": "eTims Item Classification"},
+    {"dt": "eTims Tax Mapping"},
+    {"dt": "eTims Country Code"},
 
 ]
 # Includes in <head>
@@ -167,18 +169,32 @@ doc_events = {
 #         # "before_update_after_submit": [
 #         #     "mtl_tims.mtl_tims.utils.before_save_"
 #         # ],
-        },
+    },
+    "Purchase Invoice": {
+        "before_save": [
+            "mtl_tims.etims_integration.utils.before_save_" 
+        ],
+        "before_submit": [
+            "mtl_tims.etims_integration.overrides.server.purchase_invoice.before_submit"
+        ],
+        # "validate": [
+        #     "mtl_tims.etims_integration.overrides.server.purchase_invoice.validate"
+        # ],
+        # "before_cancel": [
+        #     "mtl_tims.etims_integration.overrides.server.sales_invoice.before_cancel"
+        # ],
+    },
     "Item": {
         "on_update": [
             "mtl_tims.etims_integration.overrides.server.item.on_update"
         ],
         # "on_trash": "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion",
     },
-    # "Stock Ledger Entry": {
-    #     "on_update": [
-    #         "mtl_tims.etims_integration.overrides.server.stock_ledger_entry.on_update"
-    #     ],
-    # },
+    "Stock Reconciliation": {
+        "before_submit": [
+            "mtl_tims.etims_integration.overrides.server.stock_reconciliation.before_submit"
+        ],
+    },
     
 }
 

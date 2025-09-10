@@ -1,0 +1,99 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:tax_code",
+ "creation": "2025-09-09 17:54:13.120751",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_0gg1",
+  "amended_from",
+  "cu_name",
+  "tax_code",
+  "column_break_qrml",
+  "tax_rate",
+  "description"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_0gg1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "eTims Tax Mapping",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cu_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "CU Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "tax_code",
+   "fieldtype": "Data",
+   "in_filter": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Tax Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "column_break_qrml",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "tax_rate",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Tax Rate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Description",
+   "reqd": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-09-09 18:26:57.013431",
+ "modified_by": "Administrator",
+ "module": "eTims Integration",
+ "name": "eTims Tax Mapping",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "tax_code,tax_rate",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "tax_code"
+}

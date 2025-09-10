@@ -1,0 +1,2270 @@
+[
+ {
+  "amended_from": null,
+  "country_code": "AC",
+  "country_name": "ASCENSION ISLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.817389",
+  "name": "AC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AD",
+  "country_name": "ANDORRA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.866528",
+  "name": "AD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AE",
+  "country_name": "UNITED ARAB EMIRATES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.889981",
+  "name": "AE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AG",
+  "country_name": "ANTIGUA AND BARBUDA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.915528",
+  "name": "AG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AI",
+  "country_name": "ANGUILLA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.935884",
+  "name": "AI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AL",
+  "country_name": "ALBANIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.964148",
+  "name": "AL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AM",
+  "country_name": "ARMENIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:02.989781",
+  "name": "AM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AN",
+  "country_name": "NETHERLANDS ANTILLES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.016572",
+  "name": "AN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AO",
+  "country_name": "ANGOLA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.063707",
+  "name": "AO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AQ",
+  "country_name": "ANTARCTICA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.123134",
+  "name": "AQ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AR",
+  "country_name": "ARGENTINA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.210358",
+  "name": "AR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AS",
+  "country_name": "AMERICAN SAMOA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.265986",
+  "name": "AS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AT",
+  "country_name": "AUSTRIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.303271",
+  "name": "AT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AU",
+  "country_name": "AUSTRALIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.336897",
+  "name": "AU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AW",
+  "country_name": "ARUBA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.357294",
+  "name": "AW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AX",
+  "country_name": "ALAND ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.394200",
+  "name": "AX"
+ },
+ {
+  "amended_from": null,
+  "country_code": "AZ",
+  "country_name": "AZERBAIJAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.417064",
+  "name": "AZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BA",
+  "country_name": "BOSNIA AND HERZEGOVINA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.435822",
+  "name": "BA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BB",
+  "country_name": "BARBADOS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.458166",
+  "name": "BB"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BD",
+  "country_name": "BANGLADESH",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.480609",
+  "name": "BD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BE",
+  "country_name": "BELGIUM",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.503776",
+  "name": "BE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BF",
+  "country_name": "BURKINA FASO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.524146",
+  "name": "BF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BG",
+  "country_name": "BULGARIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.548451",
+  "name": "BG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BH",
+  "country_name": "BAHRAIN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.570028",
+  "name": "BH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BI",
+  "country_name": "BURUNDI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.591443",
+  "name": "BI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BJ",
+  "country_name": "BENIN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.612832",
+  "name": "BJ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BM",
+  "country_name": "BERMUDA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.634069",
+  "name": "BM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BN",
+  "country_name": "BRUNEI DARUSSALAM",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.658114",
+  "name": "BN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BO",
+  "country_name": "BOLIVIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.683276",
+  "name": "BO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BR",
+  "country_name": "BRAZIL",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.708830",
+  "name": "BR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BS",
+  "country_name": "BAHAMAS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.737045",
+  "name": "BS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BT",
+  "country_name": "BHUTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.757475",
+  "name": "BT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BV",
+  "country_name": "BOUVET ISLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.788719",
+  "name": "BV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BW",
+  "country_name": "BOTSWANA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.810384",
+  "name": "BW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BY",
+  "country_name": "BELARUS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.835428",
+  "name": "BY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "BZ",
+  "country_name": "BELIZE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.855210",
+  "name": "BZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CA",
+  "country_name": "CANADA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.874521",
+  "name": "CA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CC",
+  "country_name": "COCOS (KEELING) ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.893082",
+  "name": "CC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CD",
+  "country_name": "CONGO, DEMOCRATIC REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.910778",
+  "name": "CD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CF",
+  "country_name": "CENTRAL AFRICAN REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.927701",
+  "name": "CF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CG",
+  "country_name": "CONGO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.945520",
+  "name": "CG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CH",
+  "country_name": "SWITZERLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.961721",
+  "name": "CH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CI",
+  "country_name": "COTE D'IVOIRE (IVORY COAST)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.980635",
+  "name": "CI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CK",
+  "country_name": "COOK ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:03.997911",
+  "name": "CK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CL",
+  "country_name": "CHILE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.024215",
+  "name": "CL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CM",
+  "country_name": "CAMEROON",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.049939",
+  "name": "CM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CN",
+  "country_name": "CHINA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.078759",
+  "name": "CN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CO",
+  "country_name": "COLOMBIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.112916",
+  "name": "CO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CR",
+  "country_name": "COSTA RICA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.149996",
+  "name": "CR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CS",
+  "country_name": "CZECHOSLOVAKIA (FORMER)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.186249",
+  "name": "CS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CU",
+  "country_name": "CUBA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.205126",
+  "name": "CU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CV",
+  "country_name": "CAPE VERDE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.224227",
+  "name": "CV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CX",
+  "country_name": "CHRISTMAS ISLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.245606",
+  "name": "CX"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CY",
+  "country_name": "CYPRUS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.272886",
+  "name": "CY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "CZ",
+  "country_name": "CZECH REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.295132",
+  "name": "CZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DE",
+  "country_name": "GERMANY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.313179",
+  "name": "DE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DJ",
+  "country_name": "DJIBOUTI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.335109",
+  "name": "DJ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DK",
+  "country_name": "DENMARK",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.353176",
+  "name": "DK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DM",
+  "country_name": "DOMINICA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.376297",
+  "name": "DM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DO",
+  "country_name": "DOMINICAN REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.396358",
+  "name": "DO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "DZ",
+  "country_name": "ALGERIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.428430",
+  "name": "DZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "EC",
+  "country_name": "ECUADOR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.452838",
+  "name": "EC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "EE",
+  "country_name": "ESTONIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.483056",
+  "name": "EE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "EG",
+  "country_name": "EGYPT",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.509927",
+  "name": "EG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "EH",
+  "country_name": "WESTERN SAHARA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.540467",
+  "name": "EH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ER",
+  "country_name": "ERITREA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.560432",
+  "name": "ER"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ES",
+  "country_name": "SPAIN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.583332",
+  "name": "ES"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ET",
+  "country_name": "ETHIOPIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.604716",
+  "name": "ET"
+ },
+ {
+  "amended_from": null,
+  "country_code": "EU",
+  "country_name": "EUROPEAN UNION",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.627197",
+  "name": "EU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FI",
+  "country_name": "FINLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.651168",
+  "name": "FI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FJ",
+  "country_name": "FIJI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.679785",
+  "name": "FJ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FK",
+  "country_name": "FALKLAND ISLANDS (MALVINAS)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.702100",
+  "name": "FK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FM",
+  "country_name": "MICRONESIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.722964",
+  "name": "FM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FO",
+  "country_name": "FAROE ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.744816",
+  "name": "FO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FR",
+  "country_name": "FRANCE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.773720",
+  "name": "FR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "FX",
+  "country_name": "FRANCE, METROPOLITAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.802585",
+  "name": "FX"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GA",
+  "country_name": "GABON",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.838369",
+  "name": "GA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GB",
+  "country_name": "GREAT BRITAIN (UK)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.866085",
+  "name": "GB"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GD",
+  "country_name": "GRENADA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.890934",
+  "name": "GD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GE",
+  "country_name": "GEORGIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.922511",
+  "name": "GE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GF",
+  "country_name": "FRENCH GUIANA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.948905",
+  "name": "GF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GG",
+  "country_name": "GUERNSEY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:04.991658",
+  "name": "GG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GH",
+  "country_name": "GHANA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.040711",
+  "name": "GH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GI",
+  "country_name": "GIBRALTAR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.104471",
+  "name": "GI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GL",
+  "country_name": "GREENLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.139997",
+  "name": "GL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GM",
+  "country_name": "GAMBIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.162057",
+  "name": "GM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GN",
+  "country_name": "GUINEA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.195203",
+  "name": "GN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GP",
+  "country_name": "GUADELOUPE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.217725",
+  "name": "GP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GQ",
+  "country_name": "EQUATORIAL GUINEA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.239963",
+  "name": "GQ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GR",
+  "country_name": "GREECE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.260113",
+  "name": "GR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GS",
+  "country_name": "S. GEORGIA AND S. SANDWICH ISLS.",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.280846",
+  "name": "GS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GT",
+  "country_name": "GUATEMALA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.322959",
+  "name": "GT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GU",
+  "country_name": "GUAM",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.353424",
+  "name": "GU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GW",
+  "country_name": "GUINEA     BISSAU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.388876",
+  "name": "GW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "GY",
+  "country_name": "GUYANA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.411471",
+  "name": "GY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HK",
+  "country_name": "HONG KONG",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.429795",
+  "name": "HK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HM",
+  "country_name": "HEARD AND MCDONALD ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.450255",
+  "name": "HM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HN",
+  "country_name": "HONDURAS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.471027",
+  "name": "HN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HR",
+  "country_name": "CROATIA (HRVATSKA)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.497028",
+  "name": "HR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HT",
+  "country_name": "HAITI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.518107",
+  "name": "HT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "HU",
+  "country_name": "HUNGARY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.561060",
+  "name": "HU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ID",
+  "country_name": "INDONESIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.606745",
+  "name": "ID"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IE",
+  "country_name": "IRELAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.630086",
+  "name": "IE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IL",
+  "country_name": "ISRAEL",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.649771",
+  "name": "IL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IM",
+  "country_name": "ISLE OF MAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.691235",
+  "name": "IM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IN",
+  "country_name": "INDIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.726718",
+  "name": "IN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IO",
+  "country_name": "BRITISH INDIAN OCEAN TERRITORY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.754185",
+  "name": "IO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IQ",
+  "country_name": "IRAQ",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.776633",
+  "name": "IQ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IR",
+  "country_name": "IRAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.804689",
+  "name": "IR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IS",
+  "country_name": "ICELAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.826598",
+  "name": "IS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "IT",
+  "country_name": "ITALY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.848029",
+  "name": "IT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "JE",
+  "country_name": "JERSEY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.874162",
+  "name": "JE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "JM",
+  "country_name": "JAMAICA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.890739",
+  "name": "JM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "JO",
+  "country_name": "JORDAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.916997",
+  "name": "JO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "JP",
+  "country_name": "JAPAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.944304",
+  "name": "JP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KE",
+  "country_name": "KENYA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.967833",
+  "name": "KE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KG",
+  "country_name": "KYRGYZSTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:05.987941",
+  "name": "KG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KH",
+  "country_name": "CAMBODIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.010087",
+  "name": "KH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KI",
+  "country_name": "KIRIBATI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.033540",
+  "name": "KI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KM",
+  "country_name": "COMOROS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.054971",
+  "name": "KM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KN",
+  "country_name": "SAINT KITTS AND NEVIS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.078254",
+  "name": "KN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KP",
+  "country_name": "NORTH KOREA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.099562",
+  "name": "KP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KR",
+  "country_name": "SOUTH KOREA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.121319",
+  "name": "KR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KW",
+  "country_name": "KUWAIT",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.140969",
+  "name": "KW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KY",
+  "country_name": "CAYMAN ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.162609",
+  "name": "KY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "KZ",
+  "country_name": "KAZAKHSTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.180731",
+  "name": "KZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LA",
+  "country_name": "LAOS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.206853",
+  "name": "LA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LB",
+  "country_name": "LEBANON",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.230927",
+  "name": "LB"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LC",
+  "country_name": "SAINT LUCIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.254431",
+  "name": "LC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LI",
+  "country_name": "LIECHTENSTEIN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.274779",
+  "name": "LI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LK",
+  "country_name": "SRI LANKA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.297685",
+  "name": "LK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LR",
+  "country_name": "LIBERIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.322189",
+  "name": "LR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LS",
+  "country_name": "LESOTHO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.352080",
+  "name": "LS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LT",
+  "country_name": "LITHUANIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.373306",
+  "name": "LT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LU",
+  "country_name": "LUXEMBOURG",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.393023",
+  "name": "LU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LV",
+  "country_name": "LATVIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.411665",
+  "name": "LV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "LY",
+  "country_name": "LIBYA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.430856",
+  "name": "LY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MA",
+  "country_name": "MOROCCO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.448878",
+  "name": "MA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MC",
+  "country_name": "MONACO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.474775",
+  "name": "MC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MD",
+  "country_name": "MOLDOVA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.500301",
+  "name": "MD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ME",
+  "country_name": "MONTENEGRO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.521879",
+  "name": "ME"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MG",
+  "country_name": "MADAGASCAR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.545879",
+  "name": "MG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MH",
+  "country_name": "MARSHALL ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.567603",
+  "name": "MH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MK",
+  "country_name": "F.Y.R.O.M. (MACEDONIA)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.588645",
+  "name": "MK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ML",
+  "country_name": "MALI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.612695",
+  "name": "ML"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MM",
+  "country_name": "MYANMAR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.641731",
+  "name": "MM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MN",
+  "country_name": "MONGOLIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.664579",
+  "name": "MN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MO",
+  "country_name": "MACAU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.693017",
+  "name": "MO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MP",
+  "country_name": "NORTHERN MARIANA ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.718889",
+  "name": "MP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MQ",
+  "country_name": "MARTINIQUE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.740806",
+  "name": "MQ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MR",
+  "country_name": "MAURITANIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.758786",
+  "name": "MR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MS",
+  "country_name": "MONTSERRAT",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.782341",
+  "name": "MS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MT",
+  "country_name": "MALTA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.804347",
+  "name": "MT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MU",
+  "country_name": "MAURITIUS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.825151",
+  "name": "MU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MV",
+  "country_name": "MALDIVES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.844722",
+  "name": "MV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MW",
+  "country_name": "MALAWI",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.867138",
+  "name": "MW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MX",
+  "country_name": "MEXICO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.886488",
+  "name": "MX"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MY",
+  "country_name": "MALAYSIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.907312",
+  "name": "MY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "MZ",
+  "country_name": "MOZAMBIQUE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.940449",
+  "name": "MZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NA",
+  "country_name": "NAMIBIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:06.969468",
+  "name": "NA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NC",
+  "country_name": "NEW CALEDONIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.000791",
+  "name": "NC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NE",
+  "country_name": "NIGER",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.032098",
+  "name": "NE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NF",
+  "country_name": "NORFOLK ISLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.055177",
+  "name": "NF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NG",
+  "country_name": "NIGERIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.186010",
+  "name": "NG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NI",
+  "country_name": "NICARAGUA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.253458",
+  "name": "NI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NL",
+  "country_name": "NETHERLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.285004",
+  "name": "NL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NO",
+  "country_name": "NORWAY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.336572",
+  "name": "NO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NP",
+  "country_name": "NEPAL",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.364457",
+  "name": "NP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NR",
+  "country_name": "NAURU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.391733",
+  "name": "NR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NT",
+  "country_name": "NEUTRAL ZONE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.416579",
+  "name": "NT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NU",
+  "country_name": "NIUE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.447641",
+  "name": "NU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "NZ",
+  "country_name": "NEW ZEALAND (AOTEAROA)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.469086",
+  "name": "NZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "OM",
+  "country_name": "OMAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.488347",
+  "name": "OM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PA",
+  "country_name": "PANAMA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.516694",
+  "name": "PA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PE",
+  "country_name": "PERU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.543793",
+  "name": "PE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PF",
+  "country_name": "FRENCH POLYNESIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.565876",
+  "name": "PF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PG",
+  "country_name": "PAPUA NEW GUINEA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.609993",
+  "name": "PG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PH",
+  "country_name": "PHILIPPINES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.633089",
+  "name": "PH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PK",
+  "country_name": "PAKISTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.661205",
+  "name": "PK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PL",
+  "country_name": "POLAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.694494",
+  "name": "PL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PM",
+  "country_name": "ST. PIERRE AND MIQUELON",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.719871",
+  "name": "PM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PN",
+  "country_name": "PITCAIRN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.745343",
+  "name": "PN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PR",
+  "country_name": "PUERTO RICO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.771783",
+  "name": "PR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PS",
+  "country_name": "PALESTINIAN TERRITORY, OCCUPIED",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.801138",
+  "name": "PS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PT",
+  "country_name": "PORTUGAL",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.826524",
+  "name": "PT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PW",
+  "country_name": "PALAU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.845402",
+  "name": "PW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "PY",
+  "country_name": "PARAGUAY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.864520",
+  "name": "PY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "QA",
+  "country_name": "QATAR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.886571",
+  "name": "QA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "RE",
+  "country_name": "REUNION",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.927911",
+  "name": "RE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "RO",
+  "country_name": "ROMANIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:07.965171",
+  "name": "RO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "RS",
+  "country_name": "SERBIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.027558",
+  "name": "RS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "RU",
+  "country_name": "RUSSIAN FEDERATION",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.051734",
+  "name": "RU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "RW",
+  "country_name": "RWANDA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.075282",
+  "name": "RW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SA",
+  "country_name": "SAUDI ARABIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.103405",
+  "name": "SA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SB",
+  "country_name": "SOLOMON ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.121744",
+  "name": "SB"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SC",
+  "country_name": "SEYCHELLES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.143482",
+  "name": "SC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SD",
+  "country_name": "SUDAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.164717",
+  "name": "SD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SE",
+  "country_name": "SWEDEN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.184458",
+  "name": "SE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SG",
+  "country_name": "SINGAPORE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.206383",
+  "name": "SG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SH",
+  "country_name": "ST. HELENA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.227308",
+  "name": "SH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SI",
+  "country_name": "SLOVENIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.247788",
+  "name": "SI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SJ",
+  "country_name": "SVALBARD & JAN MAYEN ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.270265",
+  "name": "SJ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SK",
+  "country_name": "SLOVAK REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.287653",
+  "name": "SK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SL",
+  "country_name": "SIERRA LEONE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.303010",
+  "name": "SL"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SM",
+  "country_name": "SAN MARINO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.318897",
+  "name": "SM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SN",
+  "country_name": "SENEGAL",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.337680",
+  "name": "SN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SO",
+  "country_name": "SOMALIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.352972",
+  "name": "SO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SR",
+  "country_name": "SURINAME",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.365323",
+  "name": "SR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ST",
+  "country_name": "SAO TOME AND PRINCIPE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.377085",
+  "name": "ST"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SU",
+  "country_name": "USSR (FORMER)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.388844",
+  "name": "SU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SV",
+  "country_name": "EL SALVADOR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.403444",
+  "name": "SV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SY",
+  "country_name": "SYRIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.420773",
+  "name": "SY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "SZ",
+  "country_name": "SWAZILAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.437916",
+  "name": "SZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TC",
+  "country_name": "TURKS AND CAICOS ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.462606",
+  "name": "TC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TD",
+  "country_name": "CHAD",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.481966",
+  "name": "TD"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TF",
+  "country_name": "FRENCH SOUTHERN TERRITORIES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.506220",
+  "name": "TF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TG",
+  "country_name": "TOGO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.530489",
+  "name": "TG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TH",
+  "country_name": "THAILAND",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.550768",
+  "name": "TH"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TJ",
+  "country_name": "TAJIKISTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.569229",
+  "name": "TJ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TK",
+  "country_name": "TOKELAU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.584762",
+  "name": "TK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TM",
+  "country_name": "TURKMENISTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.605320",
+  "name": "TM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TN",
+  "country_name": "TUNISIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.621340",
+  "name": "TN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TO",
+  "country_name": "TONGA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.640997",
+  "name": "TO"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TP",
+  "country_name": "EAST TIMOR",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.659466",
+  "name": "TP"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TR",
+  "country_name": "TURKEY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.673633",
+  "name": "TR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TT",
+  "country_name": "TRINIDAD AND TOBAGO",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.693403",
+  "name": "TT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TV",
+  "country_name": "TUVALU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.710742",
+  "name": "TV"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TW",
+  "country_name": "TAIWAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.732752",
+  "name": "TW"
+ },
+ {
+  "amended_from": null,
+  "country_code": "TZ",
+  "country_name": "TANZANIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.748160",
+  "name": "TZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UA",
+  "country_name": "UKRAINE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.763119",
+  "name": "UA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UG",
+  "country_name": "UGANDA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.780874",
+  "name": "UG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UK",
+  "country_name": "UNITED KINGDOM",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.794596",
+  "name": "UK"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UM",
+  "country_name": "US MINOR OUTLYING ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.810048",
+  "name": "UM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "US",
+  "country_name": "UNITED STATES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.825498",
+  "name": "US"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UY",
+  "country_name": "URUGUAY",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.840750",
+  "name": "UY"
+ },
+ {
+  "amended_from": null,
+  "country_code": "UZ",
+  "country_name": "UZBEKISTAN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.856709",
+  "name": "UZ"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VA",
+  "country_name": "VATICAN CITY STATE (HOLY SEE)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.871871",
+  "name": "VA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VC",
+  "country_name": "SAINT VINCENT & THE GRENADINES",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.886086",
+  "name": "VC"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VE",
+  "country_name": "VENEZUELA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.902792",
+  "name": "VE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VG",
+  "country_name": "BRITISH VIRGIN ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.917704",
+  "name": "VG"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VI",
+  "country_name": "VIRGIN ISLANDS (U.S.)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.936896",
+  "name": "VI"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VN",
+  "country_name": "VIET NAM",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.953862",
+  "name": "VN"
+ },
+ {
+  "amended_from": null,
+  "country_code": "VU",
+  "country_name": "VANUATU",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.970513",
+  "name": "VU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "WF",
+  "country_name": "WALLIS AND FUTUNA ISLANDS",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:08.985938",
+  "name": "WF"
+ },
+ {
+  "amended_from": null,
+  "country_code": "WS",
+  "country_name": "SAMOA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.014962",
+  "name": "WS"
+ },
+ {
+  "amended_from": null,
+  "country_code": "YE",
+  "country_name": "YEMEN",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.047292",
+  "name": "YE"
+ },
+ {
+  "amended_from": null,
+  "country_code": "YT",
+  "country_name": "MAYOTTE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.075770",
+  "name": "YT"
+ },
+ {
+  "amended_from": null,
+  "country_code": "YU",
+  "country_name": "SERBIA AND MONTENEGRO (FORMER)",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.098008",
+  "name": "YU"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ZA",
+  "country_name": "SOUTH AFRICA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.133643",
+  "name": "ZA"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ZM",
+  "country_name": "ZAMBIA",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.155715",
+  "name": "ZM"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ZR",
+  "country_name": "(ZAIRE) SEE CD CONGO, DEMOCRATIC REPUBLIC",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.174179",
+  "name": "ZR"
+ },
+ {
+  "amended_from": null,
+  "country_code": "ZW",
+  "country_name": "ZIMBABWE",
+  "docstatus": 1,
+  "doctype": "eTims Country Code",
+  "modified": "2025-09-09 18:34:09.199088",
+  "name": "ZW"
+ }
+]
