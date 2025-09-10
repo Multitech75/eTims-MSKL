@@ -1,0 +1,17 @@
+[
+ {
+  "amended_from": null,
+  "api_key": "rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66",
+  "company_address": "KISUMU",
+  "company_name": "MULTITECH SOLUTIONS (K) Ltd",
+  "default_warehouse": "Stores - D",
+  "docstatus": 1,
+  "doctype": "eTims Company Settings",
+  "env": "Sandbox",
+  "etims_url": "http://41.139.135.45:8089/api/",
+  "is_active": 1,
+  "modified": "2025-09-10 12:19:20.765855",
+  "name": "694q6nik60",
+  "tin": "P051794665M"
+ }
+]

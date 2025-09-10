@@ -29,6 +29,7 @@ fixtures = [
     {"dt": "eTims Item Classification"},
     {"dt": "eTims Tax Mapping"},
     {"dt": "eTims Country Code"},
+    {"dt": "eTims Company Settings"},
 
 ]
 # Includes in <head>
