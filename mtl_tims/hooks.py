@@ -30,8 +30,8 @@ fixtures = [
     {"dt": "eTims Tax Mapping"},
     {"dt": "eTims Country Code"},
     {"dt": "eTims Company Settings"},
-
 ]
+
 # Includes in <head>
 # ------------------
 
@@ -164,9 +164,9 @@ doc_events = {
 #         # "validate": [
 #         #     "mtl_tims.mtl_tims.overrides.server.shared_overrides.validate"
 #         # ],
-#         # "before_cancel": [
-#         #     "mtl_tims.mtl_tims.overrides.server.sales_invoice.before_cancel"
-#         # ],
+        "before_cancel": [
+            "mtl_tims.etims_integration.overrides.server.sales_invoice.before_cancel"
+        ],
 #         # "before_update_after_submit": [
 #         #     "mtl_tims.mtl_tims.utils.before_save_"
 #         # ],
@@ -185,18 +185,31 @@ doc_events = {
         #     "mtl_tims.etims_integration.overrides.server.sales_invoice.before_cancel"
         # ],
     },
-    "Item": {
-        "on_update": [
-            "mtl_tims.etims_integration.overrides.server.item.on_update"
-        ],
-        # "on_trash": "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion",
-    },
     "Stock Reconciliation": {
         "before_submit": [
             "mtl_tims.etims_integration.overrides.server.stock_reconciliation.before_submit"
         ],
     },
     
+    "Item": {
+        "on_update": [
+            "mtl_tims.etims_integration.overrides.server.item.on_update"
+        ],
+        "on_trash": "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion",
+    },
+    "Supplier": {
+        "on_update": [
+            "mtl_tims.etims_integration.overrides.server.supplier.on_update"
+        ],
+    },
+    "Customer": {
+        "on_update": [
+            "mtl_tims.etims_integration.overrides.server.customer.on_update"
+        ],
+        # "validate": [
+        #     "mtl_tims.etims_integration.overrides.server.customer.validate"
+        # ],
+    }
 }
 
 # Scheduled Tasks

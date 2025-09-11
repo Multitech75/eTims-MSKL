@@ -306,54 +306,36 @@ def build_headers(company_name: str, branch_id: str, settings_name: str = None) 
 
 
 
-def get_settings(company_name: str = None, branch_id: str = None, settings_name: str = None) -> dict | None:
-    """Fetch settings for a given company and branch.
+def get_settings(company_name: str = None) -> dict | None:
+    """Fetch active settings for a given company.
 
     Args:
-        company_name (str, optional): The name of the company. Defaults to None.
-        branch_id (str, optional): The branch ID. Defaults to None.
+        company_name (str, optional): The name of the company. Defaults to user's default or first available.
 
     Returns:
         dict | None: The settings if found, otherwise None.
-    """
-    if settings_name:
-        if frappe.db.exists(SETTINGS_DOCTYPE_NAME, {"name": settings_name}):
-            return frappe.get_doc(SETTINGS_DOCTYPE_NAME, settings_name).as_dict()
-        
+    """ 
     company_name = (
         company_name
         or frappe.defaults.get_user_default("Company")
         or frappe.get_value("Company", {}, "name")
     )
-    if frappe.db.exists(
-        ORGANISATION_MAPPING_DOCTYPE_NAME, 
-        {"company": company_name, "is_active": 1}
-    ):
-        mapping = frappe.db.get_value(
-            ORGANISATION_MAPPING_DOCTYPE_NAME,
-            {"company": company_name, "is_active": 1},
-            "parent",
-            as_dict=True,
-        )
-        if mapping and mapping.parent:
-            return frappe.get_doc(SETTINGS_DOCTYPE_NAME, mapping.parent).as_dict()
-    
-    if frappe.db.exists(SETTINGS_DOCTYPE_NAME, {"is_active": 1}):
-        settings = frappe.db.get_value(
-            SETTINGS_DOCTYPE_NAME,
-            {"is_active": 1},
-            "*",
-            as_dict=True,
-        )
-        return settings
-    
-    return None
+
+    if not company_name:
+        return None
+
+    return frappe.db.get_value(
+        SETTINGS_DOCTYPE_NAME,
+        {"company_name": company_name},
+        "*",
+        as_dict=True,
+    )
 
 
         
 
 @frappe.whitelist()
-def get_active_settings(doctype: str = SETTINGS_DOCTYPE_NAME) -> list[dict]:
+def get_active_settings(company_name: str = None) -> list[dict]:
     try:
         results = frappe.get_all(
             doctype,
@@ -556,7 +538,8 @@ def build_invoice_payload(
     dateOnly = dt.strftime("%Y%m%d")
     dateTime = f"{dateOnly}120000"
     payload = {
-        "customerNo": frappe.get_value("Customer", invoice.customer, "customer_name") or None,
+        "customerNo": frappe.get_value("Customer", invoice.customer, "name") or None,
+        "customerTin": invoice.tax_id or "", 
         "customerName": frappe.get_value("Customer", invoice.customer, "customer_name") or None,
         "customerMobileNo": "",
         "salesType": "N",
@@ -581,11 +564,20 @@ def build_invoice_payload(
         tax_amount = item.get("custom_tax_amount", 0) or 0
         qty = abs(item.get("qty"))
         base_net_rate = round(item.get("base_net_rate") or 0, 4)
-        tax_code = item.get("taxation_type_code", "A") or "A"
+        etims_log("Debug", "build_invoice_payload tax_code item", tax_amount,qty,base_net_rate,item)
+        # tax_code = item.get("taxation_type_code", "A") or "A"
+        item_doc = frappe.get_doc("Item", item.item_code)
+        tax_code = item_doc.custom_eTims_tax_code or ""
+        if not tax_code:
+            frappe.throw(
+                msg=f"Item {item.item_name} does not have a valid eTims Tax Code. Please update the item before submitting the invoice.",
+                title="eTims Error"
+            )
+
         etims_log("Debug", "build_invoice_payload tax_code item", tax_code,item)
         payload["saleItemList"].append({
             "itemCode": item.item_code,
-            "taxTypeCode": item.custom_eTims_tax_code, #tax_code,
+            "taxTypeCode": tax_code,
             "unitPrice": round(base_net_rate + (tax_amount / qty if qty else 0), 4),
             "pkgQuantity": qty,
             "quantity": qty,
@@ -640,9 +632,10 @@ def build_creditnote_payload(
         tax_amount = item.get("custom_tax_amount", 0) or 0
         qty = abs(item.get("qty"))
         base_net_rate = round(item.get("base_net_rate") or 0, 4)
+        etims_log("Debug", "build_invoice_payload tax_code item", tax_amount,qty,base_net_rate,item)
         payload["creditNoteItemsList"].append({
             "itemCode": item.item_code,
-            "unitPrice": round(base_net_rate + (tax_amount / qty if qty else 0), 4),
+            "unitPrice": round(base_net_rate + ((tax_amount * -1) / qty if qty else 0), 4),
             "quantity": qty,
             "discountRate": 0,
         })
@@ -662,6 +655,9 @@ def build_creditnote_payload(
 
 
     """ START OF ITEM TAX CALCULATION"""
+
+
+
 def before_save_(doc: "Document", method: str | None = None) -> None:
     #checks if eTims is set to active
     # if not frappe.db.exists(SETTINGS_DOCTYPE_NAME, {"is_active": 1}): 

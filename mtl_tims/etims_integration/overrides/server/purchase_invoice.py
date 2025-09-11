@@ -5,7 +5,7 @@ from erpnext.controllers.taxes_and_totals import get_itemised_tax_breakup_data
 
 from ...apis.api_builder import EndpointsBuilder
 from ...apis.process_request import process_request
-from ...apis.apis import send_invoice_to_etims
+from ...apis.apis import send_payload_to_etims
 from ...apis.remote_response_status_handlers import (
     purchase_invoice_submission_on_success,
 )
@@ -38,14 +38,21 @@ def validate(doc: Document, method: str = None) -> None:
 
 
 def before_submit(doc: Document, method: str = None) -> None:
+    
+    settings_doc = get_settings()
+    etims_log("Debug", "on_submit settings_doc", settings_doc)
+
+    if not settings_doc:
+        return
     if (
         doc.custom_submitted_successfully != 1
-        and doc.custom_prevent_etims_registration != 1
+        and doc.prevent_etims_submission != 1
+        and settings_doc.get("is_active") == 1   # eTims Integration isActive
     ):
-    submit_purchase_invoice(doc)
+        submit_purchase_invoice(doc,settings_doc)
 
 
-def submit_purchase_invoice(doc: Document) -> None:
+def submit_purchase_invoice(doc: Document,settings_doc: dict | None) -> None:
     for item in doc.items:
         item_doc = frappe.get_doc("Item", item.item_code)
         etims_log("Debug", "_set_taxation_type_codes item_doc", item_doc.name)
@@ -58,8 +65,10 @@ def submit_purchase_invoice(doc: Document) -> None:
 
     if not doc.is_return:
         payload = build_purchase_invoice_payload(doc)
-        api_url = "http://41.139.135.45:8089/api/AddPurchaseV2"
-        response = send_invoice_to_etims(payload, api_url)
+        # api_url = "http://41.139.135.45:8089/api/AddPurchaseV2"
+        api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddPurchaseV2"
+        api_key = settings_doc.get("api_key")#"rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66"
+        response = send_payload_to_etims(payload, api_url,api_key)
 
         etims_log("Debug", "generic_invoices_on_submit_override response", response)
 

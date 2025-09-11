@@ -3,7 +3,7 @@
 from typing import Final
 
 # Doctypes
-SETTINGS_DOCTYPE_NAME: Final[str] = "KRA eTims Settings"
+SETTINGS_DOCTYPE_NAME: Final[str] = "eTims Company Settings"
 ORGANISATION_MAPPING_DOCTYPE_NAME: Final[str] = "KRA eTims Settings Organisation Mapping"
 
 
