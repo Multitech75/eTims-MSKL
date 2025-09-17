@@ -589,6 +589,25 @@ def build_invoice_payload(
     # etims_log("Debug", "build_invoice_payload payload", payload)
     return payload
 
+def get_invoice_reference_number(invoice: Document) -> str:
+    """
+    Generate a unique reference number for the invoice submission.
+
+    - If the invoice has no revisions, the reference is simply the document name.
+    - If the invoice has revisions (revision_count > 0), append `-REV{revision_count}` 
+      to make it unique and traceable (e.g., SINV-0001-REV1).
+
+    Args:
+        invoice (Document): The Invoice document instance.
+
+    Returns:
+        str: The generated reference number for submission.
+    """
+    reference_number = invoice.name
+    if hasattr(invoice, "revision_count") and invoice.revision_count is not None and int(invoice.revision_count) > 0:
+        reference_number = f"{invoice.name}-REV{int(invoice.revision_count)}"
+    return reference_number
+
 
     """ END OF SALES INVOICE PAYLOAD BUILDING AND TAX CALCULATION"""
 
@@ -770,21 +789,15 @@ def _get_taxation_type_from_item(item) -> str:
     """Get taxation type from item master data if available"""
     return frappe.get_value("Item", item.item_code, "custom_eTims_tax_code") or ""
 
+def _get_taxation_type_from_template(item) -> str:
+    """Get taxation type from item's tax template if available"""
+    etims_log("Debug", "_get_taxation_type_from_template", item.item_tax_template)
+    if item.item_tax_template:
+        return frappe.get_value("Item Tax Template", item.item_tax_template, "custom_eTims_tax_code")
+    return ""
 
 
-
-
-
-
-
-# def _get_taxation_type_from_template(item) -> str:
-#     """Get taxation type from item's tax template if available"""
-#     etims_log("Debug", "_get_taxation_type_from_template", item.item_tax_template)
-#     if item.item_tax_template:
-#         return frappe.get_value("Item Tax Template", item.item_tax_template, "custom_eTims_tax_code")
-#     return ""
-
-# def _get_taxation_type_from_rate(item) -> str:
+def _get_taxation_type_from_rate(item) -> str:
     """Determine taxation type based on item's tax rate"""
     if not hasattr(item, 'custom_eTims_tax_code'):
         return ""

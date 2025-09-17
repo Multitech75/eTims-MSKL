@@ -9,9 +9,6 @@ from io import BytesIO
 import qrcode
 from ...apis.apis import send_payload_to_etims
 
-from ...apis.process_request import process_request
-
-
 from ...utils import build_invoice_payload,build_creditnote_payload, get_invoice_reference_number
 from ...logger import etims_log
 from typing import Literal
