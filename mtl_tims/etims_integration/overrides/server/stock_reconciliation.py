@@ -3,17 +3,12 @@ from frappe.model.document import Document
 
 from erpnext.controllers.taxes_and_totals import get_itemised_tax_breakup_data
 
-from ...apis.api_builder import EndpointsBuilder
-from ...apis.process_request import process_request
 from ...apis.apis import send_payload_to_etims
-from ...apis.remote_response_status_handlers import (
-    purchase_invoice_submission_on_success,
-)
-from ...utils import get_taxation_types, get_settings
+
+from ...utils import  get_settings
 from frappe.utils import now_datetime
 from ...logger import etims_log
 
-endpoints_builder = EndpointsBuilder()
 def before_submit(doc: Document, method: str = None) -> None:
     settings_doc = get_settings()
     etims_log("Debug", "before_submit settings_doc", settings_doc)
