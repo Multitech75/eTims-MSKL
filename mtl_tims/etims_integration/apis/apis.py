@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 from io import BytesIO
 import qrcode
-import aiohttp
+# import aiohttp
 import frappe
 import frappe.defaults
 from frappe.model.document import Document

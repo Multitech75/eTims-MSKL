@@ -681,9 +681,9 @@ def calculate_tax(doc: "Document") -> None:
     
     etims_log("Debug", "has_item_level_tax", has_item_level_tax)
     if has_item_level_tax:
-        _calculate_item_level_taxes(doc)
+        _calculate_item_level_taxes(doc) #Calculate taxes using item tax templates
     elif taxes:
-        _calculate_document_level_taxes(doc, taxes)
+        _calculate_document_level_taxes(doc, taxes) #Distribute document-level taxes across items
     
     _set_taxation_type_codes(doc)
 
@@ -749,13 +749,13 @@ def _set_taxation_type_codes(doc: "Document") -> None:
             perform_item_registration(item_doc.name)
         
         item.taxation_type_code = (
-            _get_taxation_type_from_template(item) or
-            _get_taxation_type_from_rate(item) or
-            # _get_taxation_type_from_item(item) or
+            # _get_taxation_type_from_template(item) or
+            # _get_taxation_type_from_rate(item) or
+            _get_taxation_type_from_item(item) or
             "A" # fallback default
         )
         # item_doc = frappe.get_doc("Item",item.item_code )
-        # etims_log("Debug", "_set_taxation_type_codes item.taxation_type_code", item.taxation_type_code,item_doc)
+        etims_log("Debug", "_set_taxation_type_codes item.taxation_type_code", item.taxation_type_code)
 
         # # Item tax template (if set)
         # tax_template = item_doc.get("taxes")
@@ -768,25 +768,32 @@ def _set_taxation_type_codes(doc: "Document") -> None:
 
 def _get_taxation_type_from_item(item) -> str:
     """Get taxation type from item master data if available"""
-    return frappe.get_value("Item", item.item_code, "custom_taxation_type") or ""
-
-def _get_taxation_type_from_template(item) -> str:
-    """Get taxation type from item's tax template if available"""
-    etims_log("Debug", "_get_taxation_type_from_template", item)
-    if item.item_tax_template:
-        return frappe.get_value("Item Tax Template", item.item_tax_template, "custom_etims_taxation_type")
-    return ""
+    return frappe.get_value("Item", item.item_code, "custom_eTims_tax_code") or ""
 
 
-def _get_taxation_type_from_rate(item) -> str:
+
+
+
+
+
+
+# def _get_taxation_type_from_template(item) -> str:
+#     """Get taxation type from item's tax template if available"""
+#     etims_log("Debug", "_get_taxation_type_from_template", item.item_tax_template)
+#     if item.item_tax_template:
+#         return frappe.get_value("Item Tax Template", item.item_tax_template, "custom_eTims_tax_code")
+#     return ""
+
+# def _get_taxation_type_from_rate(item) -> str:
     """Determine taxation type based on item's tax rate"""
-    if not hasattr(item, 'custom_tax_rate'):
+    if not hasattr(item, 'custom_eTims_tax_code'):
         return ""
-    if round(item.custom_tax_rate) >= 16:
+    etims_log("Debug", "_get_taxation_type_from_rate", item.custom_eTims_tax_code)
+    if round(item.custom_eTims_tax_code) >= 16:
         return "B"
-    elif round(item.custom_tax_rate) >= 8:
+    elif round(item.custom_eTims_tax_code) >= 8:
         return "E"
-    elif item.custom_tax_rate == 0:
+    elif item.custom_eTims_tax_code == 0:
         return "A"
     return ""
 

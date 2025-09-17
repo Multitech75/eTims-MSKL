@@ -200,7 +200,7 @@ doc_events = {
             "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion"
         ],
     },
-    # "Supplier": {
+    # "Supplier": {custom_etims_taxation_type
     #     "on_update": [
     #         "mtl_tims.etims_integration.overrides.server.supplier.on_update"
     #     ],
