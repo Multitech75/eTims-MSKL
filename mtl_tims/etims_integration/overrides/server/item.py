@@ -27,11 +27,12 @@ def on_update(doc: Document, method: str = None) -> None:
         perform_item_registration(doc.name)
 
 
+def prevent_item_deletion(doc, method=None):
+    settings_doc = get_settings()
+    etims_log("Debug", "prevent_item_deletion", doc.as_dict())
 
-@frappe.whitelist()
-def prevent_item_deletion(doc: dict) -> None:
-    if not frappe.db.exists(SETTINGS_DOCTYPE_NAME, {"is_active": 1}):
+    if not settings_doc:
         return
-    if (doc.custom_item_registered == 1 and doc.custom_item_code_etims):  # Assuming 1 means registered, adjust as needed
+
+    if doc.custom_item_registered == 1 and doc.custom_item_code_etims:
         frappe.throw(_("Cannot delete registered items"))
-    pass

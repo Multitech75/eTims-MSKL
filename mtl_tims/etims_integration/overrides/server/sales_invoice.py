@@ -39,6 +39,8 @@ def before_submit(doc: Document, method: str = None) -> None:
 def before_cancel(doc: Document, method: str = None) -> None:
     """Disallow cancelling of submitted invoice to eTIMS."""
 
+    etims_log("Debug", "before_cancel", doc.as_dict())
+
     if doc.doctype == "Sales Invoice" and doc.custom_successfully_submitted:
         frappe.throw(
             "This invoice has already been <b>submitted</b> to eTIMS and cannot be <span style='color:red'>Canceled.</span>\n"
@@ -46,6 +48,7 @@ def before_cancel(doc: Document, method: str = None) -> None:
         )
     elif doc.doctype == "Purchase Invoice" and doc.custom_submitted_successfully:
         frappe.throw(
-            "This invoice has already been <b>submitted</b> to eTIMS and cannot be <span style='color:red'>Canceled.</span>.\nIf you need to make adjustments, please create a Debit Note instead."
+            "This invoice has already been <b>submitted</b> to eTIMS and cannot be <span style='color:red'>Canceled.</span>.\n"
+            "If you need to make adjustments, please create a Debit Note instead."
         )
 

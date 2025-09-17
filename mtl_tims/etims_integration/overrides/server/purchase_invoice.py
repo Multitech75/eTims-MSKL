@@ -13,8 +13,6 @@ from ...utils import get_taxation_types, get_settings
 from frappe.utils import now_datetime
 from ...logger import etims_log
 
-endpoints_builder = EndpointsBuilder()
-
 
 def validate(doc: Document, method: str = None) -> None:
     get_itemised_tax_breakup_data(doc)
