@@ -184,9 +184,11 @@ def get_invoice_reference_number(invoice: Document) -> str:
 """
 
 def build_creditnote_payload(
-    invoice: Document, reference_number: str = None
+    invoice: Document, invoice_type: Literal["Sales Invoice", "POS Invoice"],reference_number: str = None
 ) -> dict:
     # get current datetime (server time)
+    paymentType = "02" if invoice_type == "Sales Invoice" else "01"
+    creditNoteReason = "11" if invoice_type == "Sales Invoice" else "06"
     dt = now_datetime()
     dateOnly = dt.strftime("%Y%m%d")
     dateTime = f"{dateOnly}120000"
@@ -194,14 +196,14 @@ def build_creditnote_payload(
         "orgInvoiceNo": reference_number,
         "traderInvoiceNo": invoice.name,
         "salesType": "N",
-        "paymentType": "01", #01- CASH, 02- CREDIT
+        "paymentType": paymentType, #01- CASH, 02- CREDIT
         "creditNoteDate": dateTime,
         "confirmDate": dateTime,
         "salesDate": dateOnly,
         "stockReleseDate": dateTime,
         "receiptPublishDate": dateTime,
         "occurredDate": dateOnly,
-        "creditNoteReason": "06",
+        "creditNoteReason": creditNoteReason,
         "invoiceStatusCode": "02",
         "isPurchaseAccept": 1,
         "remark": "MSKL",

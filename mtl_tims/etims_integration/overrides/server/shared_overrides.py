@@ -36,7 +36,7 @@ def generic_invoices_before_submit(
             )
 
         reference_number = return_invoice.custom_scu_invoice_number
-        payload = build_creditnote_payload(doc, reference_number)
+        payload = build_creditnote_payload(doc,invoice_type, reference_number)
 
         etims_log("Debug", "generic_invoices_before_submit creditnote payload", payload)
         etims_log("Debug", "generic_invoices_before_submit reference_number", reference_number)
