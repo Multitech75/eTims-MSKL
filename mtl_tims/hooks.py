@@ -155,6 +155,24 @@ doc_events = {
 # 		"on_cancel": "method",
 # 		"on_trash": "method"
 # 	}
+
+    "POS Invoice": {
+        "before_save": [
+            "mtl_tims.etims_integration.utils.before_save_"
+        ],
+        "before_submit": [
+            "mtl_tims.etims_integration.overrides.server.pos_invoice.before_submit"
+        ],
+#         # "validate": [
+#         #     "mtl_tims.mtl_tims.overrides.server.shared_overrides.validate"
+#         # ],
+        "before_cancel": [
+            "mtl_tims.etims_integration.overrides.server.sales_invoice.before_cancel"
+        ],
+#         # "before_update_after_submit": [
+#         #     "mtl_tims.mtl_tims.utils.before_save_"
+#         # ],
+    },
     "Sales Invoice": {
         "before_save": [
             "mtl_tims.etims_integration.utils.before_save_"

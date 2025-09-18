@@ -13,7 +13,10 @@ def before_submit(doc: Document, method: str = None) -> None:
 
     if not settings_doc:
         return
-
+    if doc.is_pos:  # This is True for POS invoices
+            etims_log("Debug", "POS Invoice detected", doc.name)
+    else:
+        etims_log("Debug", "Normal Sales Invoice", doc.name)
     # Ensure all items are registered in eTims
     for item in doc.items:
         item_doc = frappe.get_doc("Item", item.item_code)
@@ -36,7 +39,7 @@ def before_submit(doc: Document, method: str = None) -> None:
         generic_invoices_before_submit(doc, settings_doc,"Sales Invoice")
 
 
-def before_cancel(doc: Document, method: str = None) -> None:
+def before_cancel(doc: Document, method: str = None) -> None: 
     """Disallow cancelling of submitted invoice to eTIMS."""
 
     etims_log("Debug", "before_cancel", doc.as_dict())

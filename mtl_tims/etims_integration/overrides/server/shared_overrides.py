@@ -48,7 +48,7 @@ def generic_invoices_before_submit(
     # --- Normal Submission ---
     else:
         invoice_number = get_invoice_reference_number(doc)
-        payload = build_invoice_payload(doc)
+        payload = build_invoice_payload(doc,invoice_type)
 
         etims_log("Debug", "generic_invoices_before_submit payload", payload)
         etims_log("Debug", "generic_invoices_before_submit invoice_number", invoice_number)
