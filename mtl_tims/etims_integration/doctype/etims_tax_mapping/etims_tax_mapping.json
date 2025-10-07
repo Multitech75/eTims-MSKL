@@ -69,7 +69,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-09-09 18:26:57.013431",
+ "modified": "2025-10-06 15:44:13.786376",
  "modified_by": "Administrator",
  "module": "eTims Integration",
  "name": "eTims Tax Mapping",
@@ -91,7 +91,7 @@
   }
  ],
  "row_format": "Dynamic",
- "search_fields": "tax_code,tax_rate",
+ "search_fields": "tax_code,description",
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],

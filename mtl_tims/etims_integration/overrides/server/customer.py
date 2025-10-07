@@ -20,6 +20,7 @@ def on_update(doc: Document, method: str = None) -> None:
     if (
         doc.custom_details_submitted_successfully == 0
         and doc.custom_prevent_etims_registration == 0
+        and not doc.disabled
         and settings.get("is_active") == 1   # eTims Integration isActive
     ):
         send_branch_customer_details(doc.name, settings, True)

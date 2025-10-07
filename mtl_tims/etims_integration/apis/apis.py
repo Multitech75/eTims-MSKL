@@ -367,7 +367,7 @@ def send_branch_customer_details(name: str, settings: dict | None, is_customer: 
 def build_customer_etims_payload(data) -> dict:
     """Prepare payload for API call"""
     return {
-            "customerNo": data.name, 
+            "customerNo": (data.name[9:] if len(data.name) > 9 else data.name),  # Max 9 chars
             "customerTin": data.tax_id or "", 
             "customerName": data.customer_name,
             "address": data.customer_primary_address or "",
@@ -378,3 +378,76 @@ def build_customer_etims_payload(data) -> dict:
             "remark": "MSKL" 
         }
     
+
+
+
+
+
+# --------------------------------------------------------------------------------------#
+#                            BULK ITEM REGISTRATION
+
+# @frappe.whitelist()
+# def register_all_items(doctype:str = None) -> None:
+#     settings = get_settings()
+#     if not settings:
+#         return
+#     submit_all("Item")
+#     etims_log("Debug", "register_all_items settings", settings)
+    # Item = DocType("Item")
+    # etims_log("Debug", "register_all_items Item", Item)
+    # items = (
+    #     frappe.qb.from_(Item)
+    #     .select(Item.name)
+    #     .where(
+    #         (Item.custom_item_registered != 1) &
+    #         (Item.disabled != 1) 
+    #     )
+    #     .run(as_dict=True)
+    # )
+    
+    # etims_log("Debug", "register_all_items Item", Item)
+    # for item in items:
+    #     perform_item_registration(item.name)
+
+
+
+@frappe.whitelist()
+def submit_all(doctype: str = None) -> None:
+    settings = get_settings()
+    if not settings:
+        return
+
+    Doc = DocType(doctype)
+    etims_log("Debug", "submit_all doctype", doctype)
+    etims_log("Debug", "submit_all Doc", Doc)
+
+    items = (
+        frappe.qb.from_(Doc)
+        .select(Doc.name)
+        .where(
+            (Doc.custom_details_submitted_successfully != 1)
+            & (Doc.disabled != 1)
+        )
+        .run(as_dict=True)
+    )
+
+    etims_log("Debug", "submit_all items", items)
+
+    for item in items:
+        if doctype == "Item":
+            perform_item_registration(item["name"])
+        else:
+            send_branch_customer_details(item["name"], settings, True)
+
+# --------------------------------------------------------------------------------------#
+#                            BULK CUSTOMER REGISTRATION
+
+@frappe.whitelist()
+def bulk_submit_customers(docs_list: str) -> None:
+    customers = json.loads(docs_list)
+    settings = get_settings()
+    if not settings:
+        return
+    etims_log("Debug", "bulk_submit_customers customers", customers)
+    for customer in customers:
+        send_branch_customer_details(customer, settings, True)

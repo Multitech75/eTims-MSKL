@@ -72,19 +72,19 @@ def get_settings(company_name: str = None) -> dict | None:
 
         
 
-@frappe.whitelist()
-def get_active_settings(company_name: str = None) -> list[dict]:
-    try:
-        results = frappe.get_all(
-            doctype,
-            filters={"is_active": 1},
-            fields=["name", "company"],
-            ignore_permissions=True  
-        )
-        return results
-    except Exception as e:
-        frappe.log_error(frappe.get_traceback(), _("Failed to get active settings"))
-        frappe.throw(_("An error occurred while fetching settings"))
+# @frappe.whitelist()
+# def get_active_settings(doctype: str = SETTINGS_DOCTYPE_NAME,company_name: str = None) -> list[dict]:
+#     try:
+#         results = frappe.get_all(
+#             doctype,
+#             filters={"is_active": 1},
+#             fields=["name", "company"],
+#             ignore_permissions=True  
+#         )
+#         return results
+#     except Exception as e:
+#         frappe.log_error(frappe.get_traceback(), _("Failed to get active settings"))
+#         frappe.throw(_("An error occurred while fetching settings"))
 
 
 
@@ -381,6 +381,17 @@ def _get_taxation_type_from_rate(item) -> str:
 
 
     """ END OF ITEM TAX CALCULATION"""
+
+
+@frappe.whitelist()
+def get_etims_action_data(doctype: str, docname: str = None) -> dict[str, Any]:
+    active_settings = get_settings()
+    etims_log("Debug", "get_etims_action_data active_settings", active_settings)
+    if not active_settings or active_settings.get("is_active") != 1:
+        return
+
+    return active_settings
+
 
 
 

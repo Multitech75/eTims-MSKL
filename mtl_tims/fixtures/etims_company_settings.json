@@ -1,17 +1,17 @@
 [
  {
   "amended_from": null,
-  "api_key": "rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66",
+  "api_key": "rVrIW7Yt+h3ALXCKFk03ln243VUyjQ44qph6D/ySAyjf1z+Soc6zTxEEyqYOeruk",
   "company_address": "KISUMU",
   "company_name": "Demo Company",
   "default_warehouse": "Stores - D",
-  "docstatus": 1,
+  "docstatus": 0,
   "doctype": "eTims Company Settings",
   "env": "Sandbox",
-  "etims_url": "http://41.139.135.45:8089/api/",
+  "etims_url": "http://41.139.135.45:8090/api/",
   "is_active": 1,
-  "modified": "2025-09-10 12:19:20.765855",
-  "name": "694q6nik60",
+  "modified": "2025-10-07 18:48:05.051542",
+  "name": "7gilolfkfr",
   "tin": "P051794665M"
  }
 ]

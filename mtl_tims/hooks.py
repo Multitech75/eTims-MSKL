@@ -59,7 +59,34 @@ fixtures = [
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
+doctype_js = {
+    # "Sales Invoice": "etims_integration/overrides/client/sales_invoice.js",
+    # "Purchase Invoice": "etims_integration/overrides/client/purchase_invoice.js",
+    # "Customer": "etims_integration/overrides/client/customer.js",
+    # "Supplier": "etims_integration/overrides/client/supplier.js",
+    # "Item": "etims_integration/overrides/client/items.js",
+    # "BOM": "etims_integration/overrides/client/bom.js",
+    # "Branch": "etims_integration/overrides/client/branch.js",
+    # "UOM": "etims_integration/overrides/client/uom.js",
+    # "Warehouse": "etims_integration/overrides/client/warehouse.js",
+    # "Mode of Payment": "etims_integration/overrides/client/mode_of_payment.js",
+    # "Stock Ledger Entry": "etims_integration/overrides/client/stock_ledger_entry.js",
+    # "Price List": "etims_integration/overrides/client/price_list.js",
+    # "Item Price": "etims_integration/overrides/client/item_price.js",
+}
 
+doctype_list_js = {
+    "Item": "etims_integration/overrides/client/items_list.js",
+    # "Sales Invoice": "etims_integration/overrides/client/sales_invoice_list.js",
+    # "Branch": "etims_integration/overrides/client/branch_list.js",
+    "Customer": "etims_integration/overrides/client/customer_list.js",
+    # "UOM": "etims_integration/overrides/client/uom_list.js",
+    # "Warehouse": "etims_integration/overrides/client/warehouse_list.js",
+    # "Mode of Payment": "etims_integration/overrides/client/mode_of_payment_list.js",
+    # "Supplier": "etims_integration/overrides/client/supplier_list.js",
+    # "Price List": "etims_integration/overrides/client/price_list_list.js",
+    # "Item Price": "etims_integration/overrides/client/item_price_list.js",
+}
 # Svg Icons
 # ------------------
 # include app icons in desk
