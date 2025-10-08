@@ -19,7 +19,7 @@ def on_update(doc: Document, method: str = None) -> None:
     
     if (
         not doc.custom_item_code_etims
-        and doc.custom_item_registered != 1
+        and doc.custom_details_submitted_successfully != 1
         and doc.custom_prevent_etims_registration != 1
         and not doc.disabled
         and settings_doc.get("is_active") == 1   # eTims Integration isActive
@@ -34,5 +34,5 @@ def prevent_item_deletion(doc, method=None):
     if not settings_doc:
         return
 
-    if doc.custom_item_registered == 1 and doc.custom_item_code_etims:
+    if doc.custom_details_submitted_successfully == 1 and doc.custom_item_code_etims:
         frappe.throw(_("Cannot delete registered items"))

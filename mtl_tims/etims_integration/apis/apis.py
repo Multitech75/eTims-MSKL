@@ -168,7 +168,7 @@ def send_item_to_etims(payload: dict, item_name: str | None = None) -> dict:
                     response_list = response_data.get("responseData") or []
                     if response_list and response_list[0].get("kraItemCode"):
                         frappe.db.set_value("Item", item_name, {
-                            "custom_item_registered": 1,
+                            "custom_details_submitted_successfully": 1,
                             "custom_item_eTims_message": response_data.get("message") or "",
                             "custom_item_code_etims": response_list[0]["kraItemCode"],
                             "custom_eTims_response": frappe.as_json(response_data) or "",
@@ -399,7 +399,7 @@ def build_customer_etims_payload(data) -> dict:
     #     frappe.qb.from_(Item)
     #     .select(Item.name)
     #     .where(
-    #         (Item.custom_item_registered != 1) &
+    #         (Item.custom_details_submitted_successfully != 1) &
     #         (Item.disabled != 1) 
     #     )
     #     .run(as_dict=True)
