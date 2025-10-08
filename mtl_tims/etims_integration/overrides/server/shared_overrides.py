@@ -70,39 +70,6 @@ def generic_invoices_before_submit(
     handle_etims_success_response(doc, response, invoice_type)
 
 
-# def handle_etims_success_response(doc, response: dict, doctype: str):
-#     """Handle common eTims response (success & failure) for Invoices, Stock Entry, etc."""
-
-#     # --- Success: update fields ---
-#     resp = response.get("responseData") or {}
-#     qr_url = resp.get("scuqrCode")
-#     image_url = None
-
-#     if qr_url:
-#         image_url = generate_and_attach_qr_code(qr_url, doc.name, doctype)
-
-#     sdc_datetime = None
-#     if resp.get("sdcDateTime"):
-#         try:
-#             parsed_dt = datetime.strptime(resp["sdcDateTime"], "%Y%m%d%H%M%S")
-#             sdc_datetime = parsed_dt.strftime("%Y-%m-%d %H:%M:%S")
-#         except Exception:
-#             etims_log("Error", f"Invalid sdcDateTime format: {resp['sdcDateTime']}")
-
-#     doc.custom_successfully_submitted = 1
-#     doc.custom_invoice_eTims_message = response.get("message")
-#     doc.custom_current_receipt_number = str(resp.get("curRecptNo"))
-#     doc.custom_total_receipt_number = str(resp.get("totRecptNo"))
-#     doc.custom_control_unit_date_time = sdc_datetime
-#     doc.custom_scu_invoice_number = resp.get("invoiceNo")
-#     doc.custom_scu_original_invoice_number = resp.get("originalInvoiceNo") or ""
-#     doc.custom_receipt_signature = resp.get("scuReceiptSignature")
-#     doc.custom_internal_data = resp.get("scuInternalData")
-#     doc.custom_qr_code_url = qr_url
-#     doc.custom_qr_code = image_url
-#     doc.custom_eTims_response = frappe.as_json(response)
-#     doc.custom_scu_id = resp.get("sdcid")
-#     doc.custom_scu_mrc_no = resp.get("sdcmrcNo")
 def handle_etims_success_response(doc, response: dict, doctype: str):
     """Handle common eTims response (success & failure) for Invoices, Stock Entry, etc."""
     resp = response.get("responseData") or {}
@@ -164,7 +131,9 @@ def handle_etims_success_response(doc, response: dict, doctype: str):
 
         # Log update
         etims_log("Debug", f"Item {i} updated fields", item.as_dict())
-
+    # --- Save and commit ---
+    # doc.save(ignore_permissions=True)
+    # frappe.db.commit()
 
 def generate_and_attach_qr_code(url: str, docname: str, doctype: str) -> str:
     if not url:

@@ -65,16 +65,52 @@ def submit_purchase_invoice(doc: Document,settings_doc: dict | None) -> None:
         response = send_payload_to_etims(payload, api_url,api_key)
 
         etims_log("Debug", "generic_invoices_on_submit_override response", response)
-
-        if not response.get("status"):
-            frappe.throw(
-                msg=f"Failed to validate purchase invoice {doc.name} in eTims.<br>{response.get('message')}",
-                title="eTims Error"
-            )
-        else:
+        # check if response is Purchase already exist then set custom_submitted_successfully to 1
+        
+        # if not response.get("status"):
+        if response.get("status") or "Purchase already exist" in (response.get("message")):
             doc.custom_submitted_successfully = 1
             doc.custom_purchase_invoice_eTims_message = response.get("message")
             doc.custom_eTims_response = frappe.as_json(response)
+
+            etims_log("Debug", "Parent Invoice updated fields", doc.as_dict())
+    
+    
+            # --- Update Purchase Invoice Items (Child Table) ---
+            etims_log("Debug", "Item Responses Empty - Populating from Item master")
+            etims_log("Debug", f"Items count: {len(doc.items)}")
+
+            for i, item in enumerate(doc.items):
+                etims_log("Debug", f"Updating Item {i}: {item.item_code}")
+                etims_log("Debug", f"Updating Item before {i}: {item.as_dict()}")
+
+                # Fetch from Item master
+                item_doc = frappe.get_doc("Item", item.item_code)
+
+                # Populate custom fields from the Item doctype
+                item.custom_total_amount = (item.custom_tax_amount or 0) + (item.base_net_amount or 0)
+                item.custom_item_code_etims = item_doc.get("custom_item_code_etims")
+                item.custom_item_classification = item_doc.get("custom_item_classification")
+                item.custom_item_classification_level = item_doc.get("custom_item_classification_level")
+                item.custom_item_classification_code = item_doc.get("custom_item_classification_code")
+                item.custom_etims_country_of_origin = item_doc.get("custom_etims_country_of_origin")
+                item.custom_packaging_unit = item_doc.get("custom_packaging_unit")
+                item.custom_unit_of_quantity = item_doc.get("custom_unit_of_quantity")
+                item.taxation_type_code = item_doc.get("custom_eTims_tax_code")
+
+                # Log update
+                etims_log("Debug", f"Item {i} updated fields", item.as_dict())
+            
+            # --- Save and commit ---
+            # doc.save(ignore_permissions=True)
+            # frappe.db.commit()
+        
+        else:
+            frappe.throw(
+                    msg=f"Failed to validate purchase invoice {doc.name} in eTims.<br>{response.get('message')}",
+                    title="eTims Error"
+                )
+
 
 
 def build_purchase_invoice_payload(doc: Document) -> dict:

@@ -1,6 +1,6 @@
 {
   "custom_fields": [
-        {
+    {
       "_assign": null,
       "_comments": null,
       "_liked_by": null,
@@ -64,7 +64,7 @@
       "unique": 0,
       "width": null
     },
-        {
+    {
       "_assign": null,
       "_comments": null,
       "_liked_by": null,
@@ -128,7 +128,7 @@
       "unique": 0,
       "width": null
     },
-        {
+    {
       "_assign": null,
       "_comments": null,
       "_liked_by": null,
@@ -192,8 +192,7 @@
       "unique": 0,
       "width": null
     },
-    
-        {
+    {
       "_assign": null,
       "_comments": null,
       "_liked_by": null,
@@ -257,8 +256,7 @@
       "unique": 0,
       "width": null
     },
-    
-        {
+    {
       "_assign": null,
       "_comments": null,
       "_liked_by": null,
@@ -386,7 +384,6 @@
       "unique": 0,
       "width": null
     },
-
     {
       "_assign": null,
       "_comments": null,
@@ -451,7 +448,6 @@
       "unique": 0,
       "width": null
     },
-
     {
       "_assign": null,
       "_comments": null,
@@ -516,7 +512,6 @@
       "unique": 0,
       "width": null
     },
-    
     {
       "_assign": null,
       "_comments": null,
@@ -581,15 +576,6 @@
       "unique": 0,
       "width": null
     },
-
-
-
-
-
-
-
-    
-
     {
       "_assign": null,
       "_comments": null,
@@ -653,7 +639,7 @@
       "translatable": 0,
       "unique": 0,
       "width": null
-    }, 
+    },
     {
       "_assign": null,
       "_comments": null,
@@ -753,7 +739,7 @@
       "insert_after": "taxation_type_code",
       "is_system_generated": 1,
       "is_virtual": 0,
-      "label": "Tax Amount (Company Currency)",
+      "label": "Tax Amount (KES)",
       "length": 0,
       "link_filters": null,
       "mandatory_depends_on": null,
@@ -817,7 +803,7 @@
       "insert_after": "base_net_amount",
       "is_system_generated": 1,
       "is_virtual": 0,
-      "label": "Total Amount",
+      "label": "Total Amount (KES)",
       "length": 0,
       "link_filters": null,
       "mandatory_depends_on": null,
