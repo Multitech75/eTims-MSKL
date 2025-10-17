@@ -72,7 +72,7 @@
   },
   {
    "fieldname": "api_key",
-   "fieldtype": "Data",
+   "fieldtype": "Password",
    "label": "API Key",
    "reqd": 1
   },
@@ -97,7 +97,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-10-06 15:47:35.321798",
+ "modified": "2025-10-13 14:02:00.746168",
  "modified_by": "Administrator",
  "module": "eTims Integration",
  "name": "eTims Company Settings",
