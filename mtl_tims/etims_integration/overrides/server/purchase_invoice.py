@@ -61,7 +61,7 @@ def submit_purchase_invoice(doc: Document,settings_doc: dict | None) -> None:
         payload = build_purchase_invoice_payload(doc)
         # api_url = "http://41.139.135.45:8089/api/AddPurchaseV2"
         api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddPurchaseV2"
-        api_key = settings_doc.get("api_key")#"rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66"
+        api_key = settings_doc.get_password("api_key")#"rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66"
         response = send_payload_to_etims(payload, api_url,api_key)
 
         etims_log("Debug", "generic_invoices_on_submit_override response", response)

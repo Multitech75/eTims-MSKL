@@ -8,14 +8,18 @@ from ...apis.apis import send_payload_to_etims
 from ...utils import  get_settings
 from frappe.utils import now_datetime
 from ...logger import etims_log
+import time
 
 def before_submit(doc: Document, method: str = None) -> None:
     settings_doc = get_settings()
     etims_log("Debug", "before_submit settings_doc", settings_doc)
 
+    # FIX: Use frappe.throw instead of return to completely halt submission
     if not settings_doc:
-        # No settings found → stop further processing
-        return
+        frappe.throw(
+            "eTIMS Settings not found. Cannot proceed with submission.",
+            title="eTIMS Configuration Missing"
+        )
 
     # 1. Validate warehouse
     if settings_doc.get("default_warehouse") and settings_doc.get("default_warehouse") != doc.set_warehouse:
@@ -29,24 +33,36 @@ def before_submit(doc: Document, method: str = None) -> None:
         and doc.custom_prevent_etims_registration != 1
         and settings_doc.get("is_active") == 1   # eTims Integration isActive
     ):
+        # If eTIMS API call fails inside this function, 
+        # make sure THAT function also uses frappe.throw() to stop the process.
         submit_stock_reconciliation(doc, settings_doc)
-
 
 def submit_stock_reconciliation(doc: Document,settings_doc: dict | None) -> None:
     # Validate all items first
     for item in doc.items:
         item_doc = frappe.get_doc("Item", item.item_code)
+        # Ensure item is eTims registered
         if not item_doc.custom_item_code_etims:
-            frappe.throw(
-                f"Item {item.item_name} is not registered in eTims. "
-                "Stock Reconciliation cannot be submitted."
-            )
+            from ...apis.apis import perform_item_registration
+            perform_item_registration(item_doc.name)
+
+            time.sleep(2) 
+            #  # CRITICAL: Reload the document from the database to check if the API successfully saved the code
+            # item_doc.reload()
+            
+            # # Enforce validation: Stop everything if the registration failed to yield a code
+            # if not item_doc.custom_item_code_etims:
+            #     frappe.throw(
+            #         msg=f"Item <b>{item.item_name}</b> ({item.item_code}) failed eTIMS registration. <br>"
+            #             f"Please register this item manually before submitting this document.",
+            #         title="eTIMS Registration Failed"
+            #     )
 
     # Build payload once
     payload = build_stock_reconciliation_payload(doc)
     # api_url = "http://41.139.135.45:8089/api/StockAdjustmentV2"
     api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/StockAdjustmentV2"
-    api_key = settings_doc.get("api_key")#"rVrIW7Yt+h1zB2MUNDJUbQlwqBcaP1vIKK1FDyfe16IF14If/q1vp2qdAVChDa66"
+    api_key = settings_doc.get_password("api_key")
     response = send_payload_to_etims(payload, api_url,api_key)
     etims_log("Debug", "submit_stock_reconciliation response", response)
 

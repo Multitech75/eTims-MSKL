@@ -42,7 +42,8 @@ def generic_invoices_before_submit(
         etims_log("Debug", "generic_invoices_before_submit reference_number", reference_number)
 
         api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSaleCreditNoteV2"
-        api_key=settings_doc.get("api_key")
+        # api_key=settings_doc.get("api_key")
+        api_key = settings_doc.get_password("api_key")
         response = send_payload_to_etims(payload, api_url,api_key)
 
     # --- Normal Submission ---
@@ -54,7 +55,9 @@ def generic_invoices_before_submit(
         etims_log("Debug", "generic_invoices_before_submit invoice_number", invoice_number)
 
         api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSaleV2"
-        api_key=settings_doc.get("api_key")
+        # api_key=settings_doc.get("api_key")
+        api_key = settings_doc.get_password("api_key")
+        # etims_log("Debug", "api_key", api_key )
         response = send_payload_to_etims(payload, api_url,api_key)
     
     # --- Block submission if failed ---
@@ -89,7 +92,7 @@ def handle_etims_success_response(doc, response: dict, doctype: str):
         except Exception:
             etims_log("Error", f"Invalid sdcDateTime format: {resp['sdcDateTime']}")
 
-    # --- Update Sales Invoice (Parent) ---
+    # --- Update Sales Invoice (Parent) --- 
     doc.custom_successfully_submitted = 1
     doc.custom_invoice_eTims_message = response.get("message")
     doc.custom_current_receipt_number = str(resp.get("curRecptNo"))

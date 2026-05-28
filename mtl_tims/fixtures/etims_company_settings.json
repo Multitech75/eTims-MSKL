@@ -8,7 +8,7 @@
   "docstatus": 0,
   "doctype": "eTims Company Settings",
   "env": "Sandbox",
-  "etims_url": "http://41.139.135.45:8090/api/",
+  "etims_url": "http://41.139.135.45:8093/api/",
   "is_active": 1,
   "modified": "2025-10-07 19:32:43.325355",
   "name": "7gilolfkfr",

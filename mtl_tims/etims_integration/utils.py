@@ -42,17 +42,9 @@ def is_valid_kra_pin(pin: str) -> bool:
     return bool(re.match(pattern, pin))
 
 
+def get_settings(company_name: str = None):
+    """Fetch active settings document for a given company."""
 
-
-def get_settings(company_name: str = None) -> dict | None:
-    """Fetch active settings for a given company.
-
-    Args:
-        company_name (str, optional): The name of the company. Defaults to user's default or first available.
-
-    Returns:
-        dict | None: The settings if found, otherwise None.
-    """ 
     company_name = (
         company_name
         or frappe.defaults.get_user_default("Company")
@@ -62,12 +54,41 @@ def get_settings(company_name: str = None) -> dict | None:
     if not company_name:
         return None
 
-    return frappe.db.get_value(
+    settings_name = frappe.db.get_value(
         SETTINGS_DOCTYPE_NAME,
         {"company_name": company_name},
-        "*",
-        as_dict=True,
+        "name",
     )
+
+    if not settings_name:
+        return None
+
+    return frappe.get_doc(SETTINGS_DOCTYPE_NAME, settings_name)
+
+# def get_settings(company_name: str = None) -> dict | None:
+#     """Fetch active settings for a given company.
+
+#     Args:
+#         company_name (str, optional): The name of the company. Defaults to user's default or first available.
+ 
+#     Returns:
+#         dict | None: The settings if found, otherwise None.
+#     """ 
+#     company_name = (
+#         company_name
+#         or frappe.defaults.get_user_default("Company")
+#         or frappe.get_value("Company", {}, "name")
+#     )
+
+#     if not company_name:
+#         return None
+
+#     return frappe.db.get_value(
+#         SETTINGS_DOCTYPE_NAME,
+#         {"company_name": company_name},
+#         "*",
+#         as_dict=True,
+#     )
 
 
         

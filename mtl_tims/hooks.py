@@ -30,7 +30,7 @@ fixtures = [
     {"dt": "eTims Tax Mapping"},
     {"dt": "eTims Country Code"},
     {"dt": "eTims Company Settings"},
-    {"dt": "Workspace"},
+    # {"dt": "Workspace"},
 ]
 
 # Includes in <head>
@@ -238,9 +238,9 @@ doc_events = {
     },
     
     "Item": {
-        "on_update": [
-            "mtl_tims.etims_integration.overrides.server.item.on_update"
-        ],
+        # "on_update": [
+        #     "mtl_tims.etims_integration.overrides.server.item.on_update"
+        # ],
         "on_trash": [
             "mtl_tims.etims_integration.overrides.server.item.prevent_item_deletion"
         ],
