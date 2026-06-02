@@ -15,7 +15,7 @@ frappe.listview_settings[doctypeName].onload = async function (listview) {
       __("Register all Items"),
       function () {
         const args = { settings_name: settings.name };
-        executeEtimsAction("submit_all", "Item", "Items registration queued");
+        //executeEtimsAction("submit_all", "Item", "Items registration queued");
       },
       __("eTims Actions")
     );

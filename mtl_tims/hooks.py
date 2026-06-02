@@ -250,14 +250,14 @@ doc_events = {
     #         "mtl_tims.etims_integration.overrides.server.supplier.on_update"
     #     ],
     # },
-    "Customer": {
-        "on_update": [
-            "mtl_tims.etims_integration.overrides.server.customer.on_update"
-        ],
-        # "validate": [
-        #     "mtl_tims.etims_integration.overrides.server.customer.validate"
-        # ],
-    }
+    # "Customer": {
+    #     "on_update": [
+    #         "mtl_tims.etims_integration.overrides.server.customer.on_update"
+    #     ],
+    #     # "validate": [
+    #     #     "mtl_tims.etims_integration.overrides.server.customer.validate"
+    #     # ],
+    # }
 }
 
 # Scheduled Tasks

@@ -38,11 +38,11 @@ frappe.listview_settings[customerDoctypeName] = {
           return;
         }
 
-        executeEtimsCustomerAction(
-          "bulk_submit_customers",
-          customers,
-          "Bulk customer submission queued"
-        );
+        // executeEtimsCustomerAction(
+        //   "bulk_submit_customers",
+        //   customers,
+        //   "Bulk customer submission queued"
+        // );
       });
     } catch (err) {
       console.error("Error loading eTims settings:", err);
