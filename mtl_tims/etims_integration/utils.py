@@ -120,13 +120,16 @@ def build_invoice_payload(
     reference_number = get_invoice_reference_number(invoice)
     paymentType = "02" if invoice_type == "Sales Invoice" else "01"
     # get current datetime (server time)
+    # Fetch the fields as a dictionary using frappe.get_value
+    cust_data = frappe.get_value("Customer", invoice.customer, ["number", "customer_name", "tax_id"], as_dict=True) or {}
+    etims_log("Debug","cust_data",cust_data)
     dt = now_datetime()
     dateOnly = dt.strftime("%Y%m%d")
     dateTime = f"{dateOnly}120000"
     payload = {
-        "customerNo": frappe.get_value("Customer", invoice.customer, "name") or None,
-        "customerTin": invoice.tax_id or "", 
-        "customerName": frappe.get_value("Customer", invoice.customer, "customer_name") or None,
+        "customerNo": cust_data.get("number") or None,
+        "customerTin": invoice.tax_id or cust_data.get("tax_id"), 
+        "customerName": cust_data.get("customer_name"),
         "customerMobileNo": "",
         "salesType": "N",
         "paymentType": paymentType, #"02", #01- CASH, 02- CREDIT

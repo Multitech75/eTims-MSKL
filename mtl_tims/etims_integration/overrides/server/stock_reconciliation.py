@@ -91,8 +91,8 @@ def build_stock_reconciliation_payload(doc: Document) -> dict:
 
     for item in doc.items:
         # Directly fetch required fields via DB to optimize execution speed
-        item_data = frappe.db.get_values("Item", item.item_code, ["custom_e_tims_tax_code", "item_name"], as_dict=True)
-        tax_code = item_data[0].get("custom_e_tims_tax_code") if item_data else ""
+        item_data = frappe.db.get_values("Item", item.item_code, ["custom_etims_tax_code", "item_name"], as_dict=True)
+        tax_code = item_data[0].get("custom_etims_tax_code") if item_data else ""
         
         if not tax_code:
             frappe.throw(

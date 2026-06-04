@@ -122,7 +122,7 @@ def perform_item_registration(item_name: str) -> dict:
 
     try:
         etims_log("Debug", f"Sending direct registration payload to: {reg_url}")
-        response = requests.post(reg_url, json=reg_payload, headers=headers, timeout=30)
+        response = requests.post(reg_url, json=reg_payload, headers=headers, timeout=60)
         response.raise_for_status()
         response_data = response.json()
         
@@ -248,7 +248,7 @@ def send_to_etimss(payload: dict) -> dict:
         etims_log("Debug", f"Sending headers: {headers}")
         etims_log("Debug", f"Payload being sent: {frappe.as_json(payload)}")
 
-        response = requests.post(api_url, json=payload, headers=headers, timeout=30)
+        response = requests.post(api_url, json=payload, headers=headers, timeout=60)
         response.raise_for_status()
         try:
             response_data = response.json()   # Try parse JSON
@@ -300,7 +300,7 @@ def validate_required_fields(item) -> list:
 #         # etims_log("Debug", f"Sending api_key: {api_key}")
 #         # etims_log("Debug", f"Payload being sent: {frappe.as_json(payload)}")
 
-#         response = requests.post(api_url, json=payload, headers=headers, timeout=30)
+#         response = requests.post(api_url, json=payload, headers=headers, timeout=60)
 #         response.raise_for_status()
 
 #         try:
@@ -394,7 +394,7 @@ def send_payload_to_etims(payload: dict, api_url:str | None = None, api_key:str 
     headers = {"key": api_key, "Content-Type": "application/json"}
 
     try:
-        response = requests.post(api_url, json=payload, headers=headers, timeout=30)
+        response = requests.post(api_url, json=payload, headers=headers, timeout=60)
         response.raise_for_status()
         return response.json()
     except ValueError:
@@ -418,7 +418,7 @@ def send_to_etims(payload: dict,settings: dict | None, doc_name: str | None = No
         etims_log("Debug", f"Sending headers: {headers}")
         etims_log("Debug", f"Payload being sent: {frappe.as_json(payload)}")
 
-        response = requests.post(api_url, json=payload, headers=headers, timeout=30)
+        response = requests.post(api_url, json=payload, headers=headers, timeout=60)
         response.raise_for_status()
 
         try:
