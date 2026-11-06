@@ -25,6 +25,7 @@ required_apps = ["erpnext"]
 # Fixtures 
 # --------
 fixtures = [
+    {"dt": "eTims Quantity Packing"},
     {"dt": "eTims Unit Packing"},
     {"dt": "eTims Item Classification"},
     {"dt": "eTims Tax Mapping"},
@@ -356,4 +357,3 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-

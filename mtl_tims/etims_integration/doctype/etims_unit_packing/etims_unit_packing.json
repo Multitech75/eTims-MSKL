@@ -2,16 +2,16 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "field:analysiscode",
- "creation": "2025-08-19 13:12:19.390651",
+ "creation": "2026-11-06 15:00:00.000000",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "locationid",
-  "analysistype",
-  "analysiscode",
   "analysisname",
+  "analysiscode",
   "column_break_lfbc",
+  "analysistype",
   "analysisno",
+  "locationid",
   "datecreated",
   "recordchanged",
   "isvalid",
@@ -19,43 +19,10 @@
  ],
  "fields": [
   {
-   "fieldname": "locationid",
-   "fieldtype": "Data",
-   "label": "Location Id"
-  },
-  {
-   "default": "Now",
-   "fieldname": "datecreated",
-   "fieldtype": "Datetime",
-   "label": "dateCreated"
-  },
-  {
-   "default": "1",
-   "fieldname": "recordchanged",
-   "fieldtype": "Check",
-   "label": "Record Changed"
-  },
-  {
-   "default": "1",
-   "fieldname": "isvalid",
-   "fieldtype": "Check",
-   "label": "Is Valid"
-  },
-  {
-   "default": "0",
-   "fieldname": "isdeleted",
-   "fieldtype": "Check",
-   "label": "Is Deleted"
-  },
-  {
-   "fieldname": "column_break_lfbc",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "analysistype",
+   "fieldname": "analysisname",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Analysis Type",
+   "label": "Analysis Name",
    "reqd": 1
   },
   {
@@ -67,22 +34,59 @@
    "unique": 1
   },
   {
-   "fieldname": "analysisname",
+   "fieldname": "column_break_lfbc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "analysistype",
    "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Analysis Name",
-   "reqd": 1
+   "label": "Analysis Type",
+   "default": "PK"
   },
   {
    "fieldname": "analysisno",
    "fieldtype": "Int",
    "label": "Analysis No"
+  },
+  {
+   "fieldname": "locationid",
+   "fieldtype": "Data",
+   "label": "Location Id",
+   "default": "01",
+   "in_list_view": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "datecreated",
+   "fieldtype": "Datetime",
+   "label": "dateCreated",
+   "in_list_view": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "recordchanged",
+   "fieldtype": "Check",
+   "label": "Record Changed",
+   "in_list_view": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "isvalid",
+   "fieldtype": "Check",
+   "label": "Is Valid",
+   "in_list_view": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "isdeleted",
+   "fieldtype": "Check",
+   "label": "Is Deleted"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-08-26 18:06:36.204234",
+ "modified": "2026-11-06 15:00:00.000000",
  "modified_by": "Administrator",
  "module": "eTims Integration",
  "name": "eTims Unit Packing",
@@ -104,8 +108,8 @@
  ],
  "row_format": "Dynamic",
  "search_fields": "analysiscode,analysisname",
- "sort_field": "modified",
- "sort_order": "DESC",
+ "sort_field": "analysisname",
+ "sort_order": "ASC",
  "states": [],
  "title_field": "analysisname"
 }

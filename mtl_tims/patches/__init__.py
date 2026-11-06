@@ -1,0 +1,1 @@
+"""App database migration patches."""

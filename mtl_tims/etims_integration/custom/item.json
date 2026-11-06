@@ -1070,7 +1070,7 @@
       "name": "Item-custom_unit_of_quantity",
       "no_copy": 0,
       "non_negative": 0,
-      "options": "eTims Unit Packing",
+      "options": "eTims Quantity Packing",
       "owner": "Administrator",
       "permlevel": 0,
       "placeholder": null,
