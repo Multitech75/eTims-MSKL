@@ -9,7 +9,7 @@ from frappe.model.document import Document
 from frappe.query_builder import DocType
 import requests
 from mtl_tims.etims_integration.logger import etims_log
-from mtl_tims.etims_integration.utils import  get_settings
+from mtl_tims.etims_integration.utils import get_etims_customer_number, get_settings
 # --------------------------------------------------------------------------------------#
 #                            ITEM REGISTRATION
 
@@ -83,8 +83,16 @@ def perform_item_registration(item_name: str) -> dict:
 
     # 1. FIRST CHECK: See if the item is already mapped/registered on eTIMS
     settings_doc = get_settings()
+    if not settings_doc or settings_doc.get("is_active") != 1:
+        etims_log("Warning", "Skipping eTIMS registration for item without active settings", item.name)
+        return {"success": False, "message": "eTIMS is not configured or active for this company."}
+
     api_key = settings_doc.get_password("api_key")
     base_url = settings_doc.get("etims_url", "").rstrip('/')
+    if not api_key or not base_url:
+        etims_log("Warning", "Skipping eTIMS registration for item with incomplete settings", item.name)
+        return {"success": False, "message": "eTIMS configuration is incomplete for this company."}
+
     headers = {"key": api_key, "Content-Type": "application/json"}
 
     detail_payload = build_item_etims_detail_payload(item)
@@ -529,7 +537,7 @@ def send_branch_customer_details(name: str, settings: dict | None, is_customer: 
 def build_customer_etims_payload(data) -> dict:
     """Prepare payload for API call"""
     return {
-            "customerNo": (data.name[9:] if len(data.name) > 9 else data.name),  # Max 9 chars
+            "customerNo": get_etims_customer_number(data.name),
             "customerTin": data.tax_id or "", 
             "customerName": data.customer_name,
             "address": data.customer_primary_address or "",

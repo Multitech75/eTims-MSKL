@@ -169,9 +169,9 @@ doctype_list_js = {
 # ---------------
 # Override standard doctype classes
 
-# override_doctype_class = {
-# 	"ToDo": "custom_app.overrides.CustomToDo"
-# }
+override_doctype_class = {
+    "Customer": "mtl_tims.etims_integration.overrides.server.customer.EtimsCustomer"
+}
 
 # Document Events
 # ---------------

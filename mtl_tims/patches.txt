@@ -1,8 +1,9 @@
 [pre_model_sync]
 # Patches added in this section will be executed before doctypes are migrated
 # Read docs to understand patches: https://frappeframework.com/docs/v14/user/en/database-migrations
-mtl_tims.patches.rename_etims_unit_packing
-mtl_tims.patches.update_etims_unit_packing_defaults
+#mtl_tims.patches.rename_etims_unit_packing
+#mtl_tims.patches.update_etims_unit_packing_defaults
 
 [post_model_sync]
+# mtl_tims.patches.enforce_customer_naming_series
 # Patches added in this section will be executed after doctypes are migrated

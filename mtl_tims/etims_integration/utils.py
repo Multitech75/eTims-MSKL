@@ -121,13 +121,13 @@ def build_invoice_payload(
     paymentType = "02" if invoice_type == "Sales Invoice" else "01"
     # get current datetime (server time)
     # Fetch the fields as a dictionary using frappe.get_value
-    cust_data = frappe.get_value("Customer", invoice.customer, ["number", "customer_name", "tax_id"], as_dict=True) or {}
+    cust_data = frappe.get_value("Customer", invoice.customer, ["customer_name", "tax_id"], as_dict=True) or {}
     etims_log("Debug","cust_data",cust_data)
     dt = now_datetime()
     dateOnly = dt.strftime("%Y%m%d")
     dateTime = f"{dateOnly}120000"
     payload = {
-        "customerNo": cust_data.get("number") or None,
+        "customerNo": invoice.customer,
         "customerTin": invoice.tax_id or cust_data.get("tax_id"), 
         "customerName": cust_data.get("customer_name"),
         "customerMobileNo": "",
@@ -177,6 +177,15 @@ def build_invoice_payload(
 
     # etims_log("Debug", "build_invoice_payload payload", payload)
     return payload
+
+
+def get_etims_customer_number(customer_name: str) -> str:
+    if len(customer_name) > 9:
+        frappe.throw(
+            _("Customer ID {0} exceeds eTIMS's 9-character customer number limit.").format(customer_name),
+            title=_("eTIMS Error"),
+        )
+    return customer_name
 
 def get_invoice_reference_number(invoice: Document) -> str:
     """
@@ -415,7 +424,4 @@ def get_etims_action_data(doctype: str, docname: str = None) -> dict[str, Any]:
         return
 
     return active_settings
-
-
-
 
