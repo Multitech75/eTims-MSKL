@@ -9,7 +9,21 @@ from io import BytesIO
 import qrcode
 from ...apis.apis import send_payload_to_etims
 
-from ...utils import build_invoice_payload,build_creditnote_payload, get_invoice_reference_number
+from ...utils import (
+    build_invoice_payload_v2,
+    build_invoice_payload_v3,
+    build_creditnote_payload_v2,
+    build_creditnote_payload_v3,
+    get_invoice_reference_number,
+)
+
+# Sales submission API version: "V3" -> AddSaleV3, "V2" -> AddSaleV2 (switch back by changing this)
+SALE_API_VERSION = "V3"
+SALE_PAYLOAD_BUILDERS = {"V2": build_invoice_payload_v2, "V3": build_invoice_payload_v3}
+
+# Credit note API version: "V3" -> AddSaleCreditNoteV3, "V2" -> AddSaleCreditNoteV2
+CREDIT_NOTE_API_VERSION = "V3"
+CREDIT_NOTE_PAYLOAD_BUILDERS = {"V2": build_creditnote_payload_v2, "V3": build_creditnote_payload_v3}
 from ...logger import etims_log
 from typing import Literal
 
@@ -36,12 +50,13 @@ def generic_invoices_before_submit(
             )
 
         reference_number = return_invoice.custom_scu_invoice_number
-        payload = build_creditnote_payload(doc,invoice_type, reference_number)
+        payload = CREDIT_NOTE_PAYLOAD_BUILDERS[CREDIT_NOTE_API_VERSION](doc, invoice_type, reference_number)
 
         etims_log("Debug", "generic_invoices_before_submit creditnote payload", payload)
         etims_log("Debug", "generic_invoices_before_submit reference_number", reference_number)
 
-        api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSaleCreditNoteV2"
+        api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSaleCreditNote{CREDIT_NOTE_API_VERSION}"
+        etims_log("Debug", "generic_invoices_before_submit credit note api", CREDIT_NOTE_API_VERSION, api_url)
         # api_key=settings_doc.get("api_key")
         api_key = settings_doc.get_password("api_key")
         response = send_payload_to_etims(payload, api_url,api_key)
@@ -49,12 +64,13 @@ def generic_invoices_before_submit(
     # --- Normal Submission ---
     else:
         invoice_number = get_invoice_reference_number(doc)
-        payload = build_invoice_payload(doc,invoice_type)
+        payload = SALE_PAYLOAD_BUILDERS[SALE_API_VERSION](doc, invoice_type)
 
         etims_log("Debug", "generic_invoices_before_submit payload", payload)
         etims_log("Debug", "generic_invoices_before_submit invoice_number", invoice_number)
 
-        api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSaleV2"
+        api_url = f"{settings_doc.get('etims_url', '').rstrip('/')}/AddSale{SALE_API_VERSION}"
+        etims_log("Debug", "generic_invoices_before_submit sale api", SALE_API_VERSION, api_url)
         # api_key=settings_doc.get("api_key")
         api_key = settings_doc.get_password("api_key")
         # etims_log("Debug", "api_key", api_key )

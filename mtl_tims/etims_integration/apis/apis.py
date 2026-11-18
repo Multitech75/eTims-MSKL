@@ -403,7 +403,15 @@ def send_payload_to_etims(payload: dict, api_url:str | None = None, api_key:str 
 
     try:
         response = requests.post(api_url, json=payload, headers=headers, timeout=60)
-        response.raise_for_status()
+        if not response.ok:
+            # Keep the server's error body - it explains why the request was rejected
+            body = (response.text or "")[:2000]
+            etims_log("Error", f"eTims HTTP {response.status_code} from {api_url}: {body}")
+            return {
+                "status": False,
+                "message": f"HTTP {response.status_code} from eTims: {body or response.reason}",
+                "responseData": None,
+            }
         return response.json()
     except ValueError:
         return {"status": False, "message": "Invalid JSON from eTims", "responseData": None}

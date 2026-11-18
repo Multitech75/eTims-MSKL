@@ -113,7 +113,7 @@ def get_settings(company_name: str = None):
 """
     START OF SALES INVOICE PAYLOAD BUILDING AND TAX CALCULATION
 """
-def build_invoice_payload(
+def build_invoice_payload_v2(
     invoice: Document,
     invoice_type: Literal["Sales Invoice", "POS Invoice"]
 ) -> dict:
@@ -179,6 +179,90 @@ def build_invoice_payload(
     return payload
 
 
+def build_invoice_payload_v3(
+    invoice: Document,
+    invoice_type: Literal["Sales Invoice", "POS Invoice"]
+) -> dict:
+    """Payload for AddSaleV3."""
+    reference_number = get_invoice_reference_number(invoice)
+    paymentType = "02" if invoice_type == "Sales Invoice" else "01"  # 01- CASH, 02- CREDIT
+    cust_data = frappe.get_value("Customer", invoice.customer, ["customer_name", "tax_id"], as_dict=True) or {}
+    etims_log("Debug", "build_invoice_payload_v3 cust_data", cust_data)
+    dt = now_datetime()
+    dateOnly = dt.strftime("%Y%m%d")
+    dateTime = f"{dateOnly}120000"
+    payload = {
+        "customerNo": invoice.customer,
+        "customerTin": invoice.tax_id or cust_data.get("tax_id") or "",
+        "customerName": cust_data.get("customer_name"),
+        "customerMobileNo": "",
+        "salesType": "N",
+        "paymentType": paymentType,
+        "traderInvoiceNo": invoice.name,
+        "confirmDate": dateTime,
+        "salesDate": dateOnly,
+        "stockReleseDate": dateTime,
+        "receiptPublishDate": dateTime,
+        "occurredDate": dateOnly,
+        "invoiceStatusCode": "02",
+        "remark": "MSKL",
+        "isPurchaseAccept": True,
+        "mapping": invoice.name,
+        "isStockUpdate": True,
+        "saleItemList": []
+    }
+
+    etims_log("Debug", "build_invoice_payload_v3 reference_number", reference_number)
+    calculate_tax(invoice)
+
+    for item in invoice.items:
+        tax_amount = item.get("custom_tax_amount", 0) or 0
+        qty = abs(item.get("qty"))
+        base_net_rate = round(item.get("base_net_rate") or 0, 4)
+        item_doc = frappe.get_doc("Item", item.item_code)
+        tax_code = item_doc.custom_eTims_tax_code or ""
+        if not tax_code:
+            etims_log("Error", "build_invoice_payload_v3 missing tax code", item.item_code)
+            frappe.throw(
+                msg=f"Item {item.item_name} does not have a valid eTims Tax Code. Please update the item before submitting the invoice.",
+                title="eTims Error"
+            )
+
+        missing = [
+            label
+            for label, val in (
+                ("Packaging Unit", item_doc.get("custom_packaging_unit")),
+                ("Unit of Quantity", item_doc.get("custom_unit_of_quantity")),
+            )
+            if not val
+        ]
+        if missing:
+            etims_log("Error", "build_invoice_payload_v3 missing item fields", item.item_code, missing)
+            frappe.throw(
+                msg=f"Item {item.item_name} is missing: {', '.join(missing)}. Cannot submit {invoice_type}.",
+                title="eTims Error"
+            )
+
+        item_payload = {
+            "itemCode": item.item_code,
+            "itemName": item.item_name,
+            "taxTypeCode": tax_code,
+            "unitPrice": round(base_net_rate + (tax_amount / qty if qty else 0), 4),
+            "pkgUnitCode": item_doc.get("custom_packaging_unit"),
+            "pkgQuantity": qty,
+            "qtyUnitCode": item_doc.get("custom_unit_of_quantity"),
+            "quantity": qty,
+            "discountRate": 0,
+            "isItemStockUpdate": True,
+            "isItemAlreadyStockIOUpdate": False,
+        }
+        etims_log("Debug", "build_invoice_payload_v3 item", item_payload)
+        payload["saleItemList"].append(item_payload)
+
+    etims_log("Debug", "build_invoice_payload_v3 payload", frappe.as_json(payload))
+    return payload
+
+
 def get_etims_customer_number(customer_name: str) -> str:
     if len(customer_name) > 9:
         frappe.throw(
@@ -216,7 +300,7 @@ def get_invoice_reference_number(invoice: Document) -> str:
     START OF SALES CREDITNOTE PAYLOAD BUILDING AND TAX CALCULATION
 """
 
-def build_creditnote_payload(
+def build_creditnote_payload_v2(
     invoice: Document, invoice_type: Literal["Sales Invoice", "POS Invoice"],reference_number: str = None
 ) -> dict:
     # get current datetime (server time)
@@ -260,6 +344,87 @@ def build_creditnote_payload(
         })
 
     # etims_log("Debug", "build_invoice_payload payload", payload)
+    return payload
+
+
+def build_creditnote_payload_v3(
+    invoice: Document, invoice_type: Literal["Sales Invoice", "POS Invoice"], reference_number: str = None
+) -> dict:
+    """Payload for AddSaleCreditNoteV3."""
+    paymentType = "02" if invoice_type == "Sales Invoice" else "01"  # 01- CASH, 02- CREDIT
+    creditNoteReason = "11" if invoice_type == "Sales Invoice" else "06"
+    dt = now_datetime()
+    dateOnly = dt.strftime("%Y%m%d")
+    dateTime = f"{dateOnly}120000"
+
+    # V3 expects orgInvoiceNo as a number; don't block if it can't be parsed
+    try:
+        org_invoice_no = int(reference_number)
+    except (TypeError, ValueError):
+        etims_log("Warning", "build_creditnote_payload_v3 invalid orgInvoiceNo, sending 0",
+                  invoice.name, "return_against:", invoice.return_against, "value:", reference_number)
+        org_invoice_no = 0
+
+    payload = {
+        "orgInvoiceNo": org_invoice_no,
+        "traderInvoiceNo": invoice.name,
+        "salesType": "N",
+        "paymentType": paymentType,
+        "creditNoteDate": dateTime,
+        "confirmDate": dateTime,
+        "salesDate": dateOnly,
+        "stockReleseDate": dateTime,
+        "receiptPublishDate": dateTime,
+        "occurredDate": dateOnly,
+        "creditNoteReason": creditNoteReason,
+        "invoiceStatusCode": "02",
+        "isPurchaseAccept": True,
+        "remark": "MSKL",
+        "mapping": invoice.name,
+        "isStockUpdate": True,
+        "creditNoteItemsList": []
+    }
+
+    etims_log("Debug", "build_creditnote_payload_v3 orgInvoiceNo", invoice.name, org_invoice_no)
+    calculate_tax(invoice)
+
+    for item in invoice.items:
+        tax_amount = item.get("custom_tax_amount", 0) or 0
+        qty = abs(item.get("qty"))
+        base_net_rate = round(item.get("base_net_rate") or 0, 4)
+        item_doc = frappe.get_doc("Item", item.item_code)
+
+        missing = [
+            label
+            for label, val in (
+                ("Packaging Unit", item_doc.get("custom_packaging_unit")),
+                ("Unit of Quantity", item_doc.get("custom_unit_of_quantity")),
+            )
+            if not val
+        ]
+        if missing:
+            etims_log("Error", "build_creditnote_payload_v3 missing item fields", item.item_code, missing)
+            frappe.throw(
+                msg=f"Item {item.item_name} is missing: {', '.join(missing)}. Cannot submit credit note.",
+                title="eTims Error"
+            )
+
+        item_payload = {
+            "itemCode": item.item_code,
+            "itemName": item.item_name,
+            "unitPrice": round(base_net_rate + ((tax_amount * -1) / qty if qty else 0), 4),
+            "pkgQuantity": qty,
+            "pkgUnitCode": item_doc.get("custom_packaging_unit"),
+            "qtyUnitCode": item_doc.get("custom_unit_of_quantity"),
+            "discountRate": 0,
+            "quantity": qty,
+            "isItemStockUpdate": True,
+            "isItemAlreadyStockIOUpdate": False,
+        }
+        etims_log("Debug", "build_creditnote_payload_v3 item", item_payload)
+        payload["creditNoteItemsList"].append(item_payload)
+
+    etims_log("Debug", "build_creditnote_payload_v3 payload", frappe.as_json(payload))
     return payload
 
 
