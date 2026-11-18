@@ -362,7 +362,9 @@ def _get_org_invoice_no(original: Document) -> int:
 def build_purchase_return_payload(doc: Document, original: Document) -> dict:
     dt = now_datetime()
     date_only = dt.strftime("%Y%m%d")
-    date_time = dt.strftime("%Y%m%d%H%M%S")
+    # Fixed 12:00:00 like the other eTims payloads: the API parses "yyyyMMddhhmmss" with a
+    # 12-hour "hh", so afternoon times (e.g. 15:09:50) are rejected as "Invalid ReturnDate format."
+    date_time = f"{date_only}120000"
     purchase_date = frappe.utils.getdate(original.posting_date).strftime("%Y%m%d")
 
     payload = {
