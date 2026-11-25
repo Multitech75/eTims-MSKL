@@ -1,0 +1,156 @@
+{
+ "charts": [],
+ "content": "[{\"id\": \"etimshdr\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>eTims Settings</b></span>\", \"col\": 12}}, {\"id\": \"etimssc0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Company Settings\", \"col\": 3}}, {\"id\": \"etimssc1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Tax Mapping\", \"col\": 3}}, {\"id\": \"etimssc2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Item Classification\", \"col\": 3}}, {\"id\": \"etimssc3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Unit Packing\", \"col\": 3}}, {\"id\": \"etimssc4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Quantity Packing\", \"col\": 3}}, {\"id\": \"etimssc5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Country Code\", \"col\": 3}}, {\"id\": \"etimssp\", \"type\": \"spacer\", \"data\": {\"col\": 12}}, {\"id\": \"etimscard1\", \"type\": \"card\", \"data\": {\"card_name\": \"Settings\", \"col\": 4}}, {\"id\": \"etimscard2\", \"type\": \"card\", \"data\": {\"card_name\": \"eTims Masters\", \"col\": 4}}]",
+ "creation": "2026-11-25 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "receipt",
+ "idx": 0,
+ "is_hidden": 0,
+ "label": "eTims",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Company Settings",
+   "link_count": 0,
+   "link_to": "eTims Company Settings",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "eTims Masters",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Tax Mapping",
+   "link_count": 0,
+   "link_to": "eTims Tax Mapping",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Classification",
+   "link_count": 0,
+   "link_to": "eTims Item Classification",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Unit Packing",
+   "link_count": 0,
+   "link_to": "eTims Unit Packing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Quantity Packing",
+   "link_count": 0,
+   "link_to": "eTims Quantity Packing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Country Code",
+   "link_count": 0,
+   "link_to": "eTims Country Code",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-11-25 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "eTims Integration",
+ "name": "eTims",
+ "number_cards": [],
+ "owner": "Administrator",
+ "public": 1,
+ "quick_lists": [],
+ "restrict_to_domain": "",
+ "roles": [],
+ "sequence_id": 50,
+ "shortcuts": [
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "label": "Company Settings",
+   "link_to": "eTims Company Settings",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Tax Mapping",
+   "link_to": "eTims Tax Mapping",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Item Classification",
+   "link_to": "eTims Item Classification",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Unit Packing",
+   "link_to": "eTims Unit Packing",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Quantity Packing",
+   "link_to": "eTims Quantity Packing",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Country Code",
+   "link_to": "eTims Country Code",
+   "type": "DocType"
+  }
+ ],
+ "title": "eTims"
+}

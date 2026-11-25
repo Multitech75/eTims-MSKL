@@ -11,15 +11,15 @@ required_apps = ["erpnext"]
 
 
 # Each item in the list will be shown as an app in the apps page
-# add_to_apps_screen = [
-# 	{
-# 		"name": "mtl_tims",
-# 		"logo": "/assets/mtl_tims/logo.png",
-# 		"title": "Kenya Tims Intigration",
-# 		"route": "/mtl_tims",
-# 		"has_permission": "mtl_tims.api.permission.has_app_permission"
-# 	}
-# ]
+add_to_apps_screen = [
+	{
+		"name": "mtl_tims",
+		"logo": "/assets/mtl_tims/images/etims.svg",
+		"title": "eTims",
+		"route": "/desk/etims",
+		"has_permission": "mtl_tims.check_app_permission",
+	}
+]
 
 
 # Fixtures 
@@ -30,7 +30,9 @@ fixtures = [
     {"dt": "eTims Item Classification"},
     {"dt": "eTims Tax Mapping"},
     {"dt": "eTims Country Code"},
-    {"dt": "eTims Company Settings"},
+    # eTims Company Settings is site-specific (URL, TIN, API key) and is NOT shipped as a
+    # fixture, so `bench migrate` never overwrites the live settings. See
+    # etims_integration/settings_backup.py for the before/after migrate backup.
     # {"dt": "Workspace"},
 ]
 
@@ -77,10 +79,8 @@ doctype_js = {
 }
 
 doctype_list_js = {
-    "Item": "etims_integration/overrides/client/items_list.js",
     # "Sales Invoice": "etims_integration/overrides/client/sales_invoice_list.js",
     # "Branch": "etims_integration/overrides/client/branch_list.js",
-    "Customer": "etims_integration/overrides/client/customer_list.js",
     # "UOM": "etims_integration/overrides/client/uom_list.js",
     # "Warehouse": "etims_integration/overrides/client/warehouse_list.js",
     # "Mode of Payment": "etims_integration/overrides/client/mode_of_payment_list.js",
@@ -123,6 +123,12 @@ doctype_list_js = {
 # ------------
 
 # before_install = "mtl_tims.install.before_install"
+
+# Migration
+# ------------
+# Back up the live eTims settings before migrate and restore them afterwards
+before_migrate = ["mtl_tims.etims_integration.settings_backup.backup_settings"]
+after_migrate = ["mtl_tims.etims_integration.settings_backup.restore_settings"]
 # after_install = "mtl_tims.install.after_install"
 
 # Uninstallation
