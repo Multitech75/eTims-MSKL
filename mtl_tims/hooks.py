@@ -270,6 +270,15 @@ doc_events = {
 # Scheduled Tasks
 # ---------------
 
+scheduler_events = {
+    "cron": {
+        # Resend Purchase Invoices / Stock Reconciliations queued while eTims was unreachable
+        "*/5 * * * *": [
+            "mtl_tims.etims_integration.offline_queue.resend_queued_documents"
+        ],
+    },
+}
+
 # scheduler_events = {
 # 	"all": [
 # 		"mtl_tims.tasks.all"

@@ -402,7 +402,7 @@ def send_payload_to_etims(payload: dict, api_url:str | None = None, api_key:str 
     headers = {"key": api_key, "Content-Type": "application/json"}
 
     try:
-        response = requests.post(api_url, json=payload, headers=headers, timeout=60)
+        response = _post_with_connect_retry(api_url, payload, headers)
         if not response.ok:
             # Keep the server's error body - it explains why the request was rejected
             body = (response.text or "")[:2000]
@@ -417,7 +417,53 @@ def send_payload_to_etims(payload: dict, api_url:str | None = None, api_key:str 
         return {"status": False, "message": "Invalid JSON from eTims", "responseData": None}
     except Exception as e:
         etims_log("Error", f"API request failed: {str(e)}")
-        return {"status": False, "message": str(e), "responseData": None}
+        return {
+            "status": False,
+            "message": str(e),
+            "responseData": None,
+            # True only when eTims never received the request (safe to queue and resend later)
+            "connection_error": is_connection_never_established(e),
+        }
+
+
+# Delays (seconds) between attempts when the eTims server cannot be reached at all.
+ETIMS_CONNECT_RETRY_DELAYS = (2, 5)
+# (connect timeout, read timeout)
+ETIMS_TIMEOUT = (10, 60)
+
+
+def is_connection_never_established(exc: Exception) -> bool:
+    """True when the TCP connection to eTims was never opened (e.g. "No route to host",
+    "Connection refused", connect timeout), so eTims cannot have received the request.
+
+    Errors after the connection was made (read timeout, connection reset mid-response) are
+    NOT included: eTims may already have processed the request, so retrying could duplicate it.
+    """
+    if isinstance(exc, requests.exceptions.ConnectTimeout):
+        return True
+    if isinstance(exc, requests.exceptions.ConnectionError):
+        text = str(exc)
+        return "NewConnectionError" in text or "Failed to establish a new connection" in text
+    return False
+
+
+def _post_with_connect_retry(api_url: str, payload: dict, headers: dict) -> requests.Response:
+    """POST to eTims, retrying only when the connection could not be established."""
+    import time
+
+    attempts = len(ETIMS_CONNECT_RETRY_DELAYS) + 1
+    for attempt in range(1, attempts + 1):
+        try:
+            return requests.post(api_url, json=payload, headers=headers, timeout=ETIMS_TIMEOUT)
+        except Exception as e:
+            if attempt == attempts or not is_connection_never_established(e):
+                raise
+            delay = ETIMS_CONNECT_RETRY_DELAYS[attempt - 1]
+            etims_log(
+                "Warning",
+                f"eTims unreachable (attempt {attempt}/{attempts}), retrying in {delay}s: {e}",
+            )
+            time.sleep(delay)
 
 
 # --------------------------------------------------------------------------------------#

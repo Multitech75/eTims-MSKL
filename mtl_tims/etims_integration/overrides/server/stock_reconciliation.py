@@ -5,6 +5,7 @@ from ...apis.apis import send_payload_to_etims
 from ...utils import get_settings
 from frappe.utils import now_datetime
 from ...logger import etims_log
+from ...offline_queue import queue_or_raise_if_unreachable
 
 def before_submit(doc: Document, method: str = None) -> None:
     settings_doc = get_settings()
@@ -71,6 +72,8 @@ def submit_stock_reconciliation(doc: Document, settings_doc: dict | None) -> Non
     etims_log("Debug", "submit_stock_reconciliation response", response)
 
     if not response.get("status"):
+        if queue_or_raise_if_unreachable(doc, response):
+            return
         frappe.throw(
             msg=f"Failed to validate Stock Reconciliation {doc.name} in eTims.<br>{response.get('message')}",
             title="eTims Error"

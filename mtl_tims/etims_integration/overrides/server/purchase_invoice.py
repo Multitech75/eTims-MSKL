@@ -8,6 +8,7 @@ from ...apis.apis import send_payload_to_etims
 from ...utils import get_settings
 from frappe.utils import now_datetime
 from ...logger import etims_log
+from ...offline_queue import queue_or_raise_if_unreachable
 
 
 def validate(doc: Document, method: str = None) -> None:
@@ -114,6 +115,8 @@ def submit_purchase_invoice(doc: Document,settings_doc: dict | None) -> None:
             # frappe.db.commit()
         
         else:
+            if queue_or_raise_if_unreachable(doc, response):
+                return
             frappe.throw(
                     msg=f"Failed to validate purchase invoice {doc.name} in eTims.<br>{response.get('message')}",
                     title="eTims Error"
@@ -311,6 +314,8 @@ def submit_purchase_return(doc: Document, settings_doc: dict | None) -> dict:
 
     message = response.get("message") or ""
     if not response.get("status"):
+        if queue_or_raise_if_unreachable(doc, response):
+            return response
         etims_log("Error", "submit_purchase_return failed", doc.name, message)
         frappe.throw(
             msg=f"Failed to submit purchase return {doc.name} to eTims.<br>{message}",
